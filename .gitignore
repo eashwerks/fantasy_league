@@ -1,0 +1,11 @@
+# SQLite3 database files:
+*.db
+*.sqlite3
+*.sqlite
+
+.idea
+static/bower_components/
+staticfiles
+*sublime*
+# Byte-compiled / optimized / DLL files
+__pycache__/
