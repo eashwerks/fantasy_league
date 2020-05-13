@@ -43,8 +43,10 @@ class AuthUser(AbstractBaseUser, PermissionsMixin):
     @transaction.atomic
     def save(self, **kwargs):
         if not self.id:
+            super(AuthUser, self).save(**kwargs)
             Team.objects.create(created_by=self)
-        return super(AuthUser, self).save(**kwargs)
+        else:
+            super(AuthUser, self).save(**kwargs)
 
 
 class IPLTeam(models.Model):
