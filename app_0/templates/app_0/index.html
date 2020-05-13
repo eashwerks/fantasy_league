@@ -1,0 +1,213 @@
+{% extends "app_0/base.html" %}
+
+
+{% block content %}
+{% load static %}
+
+<section class="engine"><a href="https://mobirise.info/r">free bootstrap template</a></section>
+<section class="mbr-section content5 cid-rYM10Xr3U4 mbr-parallax-background" id="content5-5">
+
+
+    <div class="mbr-overlay" style="opacity: 0.4; background-color: rgb(35, 35, 35);">
+    </div>
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-1">Watch IPL<br>with Benefits
+                </h2>
+                <h3 class="mbr-section-subtitle align-center mbr-light mbr-white pb-3 mbr-fonts-style display-5">
+                    Build your team &amp; earn points</h3>
+
+                <div class="mbr-section-btn align-center"><a class="btn btn-primary display-4" href="{% url 'leader-board-view' %}">Leaderboard</a>
+                    <a class="btn btn-white-outline display-4" href="{% url 'team-view' %}">Players</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-table cid-rYM41nDyOg" id="table1-6">
+
+
+    <div class="container container-table">
+        <h2 class="mbr-section-title mbr-fonts-style align-center pb-3 display-2">
+            Leaderboard</h2>
+
+        <div class="table-wrapper">
+            <div class="container">
+
+            </div>
+
+            <div class="container scroll">
+                <table class="table" cellspacing="0">
+                    <thead>
+                    <tr class="table-heads ">
+
+
+                        <th class="head-item mbr-fonts-style display-7">
+                            RANK
+                        </th>
+                        <th class="head-item mbr-fonts-style display-7">
+                            NAME
+                        </th>
+                        <th class="head-item mbr-fonts-style display-7">
+                            POINTS
+                        </th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    {% for item in l_board %}
+                    <tr>
+                        <td class="body-item mbr-fonts-style display-7">#1</td>
+                        <td class="body-item mbr-fonts-style display-7">{{item.full_name}}</td>
+                        <td class="body-item mbr-fonts-style display-7">{{ item.allocated_points }}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="container table-info-container">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services1 cid-rYM7VSCdqV" id="services1-c">
+    <!---->
+
+    <!---->
+    <!--Overlay-->
+
+    <!--Container-->
+    <div class="container">
+        <div class="row justify-content-center">
+            <!--Titles-->
+            <div class="title pb-5 col-12">
+                <h2 class="align-left pb-3 mbr-fonts-style display-1">Upcoming Matches</h2>
+
+            </div>
+            <!--Card-1-->
+            <div class="card col-12 col-md-6 p-3 col-lg-4">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <img src="{% static 'assets/images/untitled-design-9.jpg' %}" alt="Mobirise" title="">
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-5">Sunrisers Vs Chennai</h4>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium dolores doloribus
+                            eligendi eum illo placeat quis repellendus sequi tempore!
+                        </p>
+                        <!--Btn-->
+
+                    </div>
+                </div>
+            </div>
+            <!--Card-2-->
+            <div class="card col-12 col-md-6 p-3 col-lg-4">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <img src="{% static 'assets/images/untitled-design-9.jpg' %}" alt="Mobirise" title="">
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-5">
+                            Mumbai Vs Kolkata</h4>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium dolores doloribus
+                            eligendi eum illo placeat quis repellendus sequi tempore!
+                        </p>
+                        <!--Btn-->
+
+                    </div>
+                </div>
+            </div>
+            <!--Card-3-->
+            <div class="card col-12 col-md-6 p-3 col-lg-4 last-child">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <img src="{% static 'assets/images/untitled-design-9.jpg' %}" alt="Mobirise" title="">
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-5">Rajasthan Vs Punjab</h4>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium dolores doloribus
+                            eligendi eum illo placeat quis repellendus sequi tempore!
+                        </p>
+                        <!--Btn-->
+
+                    </div>
+                </div>
+            </div>
+            <!--Card-4-->
+
+        </div>
+    </div>
+</section>
+
+<section class="testimonials4 cid-rYM6PnV3jj" id="testimonials4-9">
+
+
+    <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(35, 35, 35);">
+    </div>
+    <div class="container">
+        <h2 class="pb-3 mbr-fonts-style mbr-white align-center display-2">
+            WHAT OUR FANTASTIC USERS SAY
+        </h2>
+
+        <div class="col-md-10 testimonials-container">
+
+
+            <div class="testimonials-item">
+                <div class="user row">
+                    <div class="col-lg-3 col-md-4">
+                        <div class="user_image">
+                            <img src="{% static 'assets/images/face2.jpg' %}">
+                        </div>
+                    </div>
+                    <div class="testimonials-caption col-lg-9 col-md-8">
+                        <div class="user_text ">
+                            <p class="mbr-fonts-style  display-7">
+                                <em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae nostrum, quos
+                                    voluptas fugiat blanditiis, temporibus expedita cumque doloribus ea, officiis
+                                    consequuntur repellat minus ad veritatis? Facere similique accusamus, accusantium
+                                    sunt!"</em>
+                            </p>
+                        </div>
+                        <div class="user_name mbr-bold mbr-fonts-style align-left pt-3 display-7">
+                            Helen
+                        </div>
+                        <div class="user_desk mbr-light mbr-fonts-style align-left pt-2 display-7">KERALA, INDIA</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonials-item">
+                <div class="user row">
+                    <div class="col-lg-3 col-md-4">
+                        <div class="user_image">
+                            <img src="{% static 'assets/images/face1.jpg' %}">
+                        </div>
+                    </div>
+                    <div class="testimonials-caption col-lg-9 col-md-8">
+                        <div class="user_text">
+                            <p class="mbr-fonts-style  display-7">
+                                <em>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae nostrum, quos
+                                    voluptas fugiat blanditiis, temporibus expedita cumque doloribus ea, officiis
+                                    consequuntur repellat minus ad veritatis? Facere similique accusamus, accusantium
+                                    sunt!"</em>
+                            </p>
+                        </div>
+                        <div class="user_name mbr-bold mbr-fonts-style align-left pt-3 display-7">
+                            Alex
+                        </div>
+                        <div class="user_desk mbr-light mbr-fonts-style align-left pt-2 display-7">ALASKA, USA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

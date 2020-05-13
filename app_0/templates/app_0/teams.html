@@ -1,0 +1,79 @@
+{% extends "app_0/base.html" %}
+
+
+{% block content %}
+{% load static %}
+<section class="engine"><a href="https://mobirise.info/z">best free html templates</a></section>
+<section class="mbr-section content4 cid-rYNr5flxyU" id="content4-t">
+
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+                    Create Your Team</h2>
+                <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">
+                    select your players from teams</h3>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features3 cid-rYNqVpOgMa" id="features3-s">
+
+
+    <div class="container">
+        <div class="media-container-row">
+            {% for item in ipl_teams_1 %}
+            <div class="card p-3 col-12 col-md-6 col-lg-3">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <img src="{{ item.image.url }}" alt="{{item.id}}" title="">
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-7">
+                            {{ item.name}}</h4>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            {{ item.description }}.</p>
+                    </div>
+                    <div class="mbr-section-btn text-center"><a href="https://mobirise.co"
+                                                                class="btn btn-primary display-4">
+                        select</a></div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+<section class="features3 cid-rYNsoMkuiP" id="features3-u">
+
+
+    <div class="container">
+        <div class="media-container-row">
+            {% for item in ipl_teams_2 %}
+            <div class="card p-3 col-12 col-md-6 col-lg-3">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <img src="{{ item.image.url }}" alt="{{item.id}}" title="">
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-7">
+                            {{ item.name}}</h4>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            {{ item.description }}</p>
+                    </div>
+                    <div class="mbr-section-btn text-center"><a href="https://mobirise.co"
+                                                                class="btn btn-primary display-4">
+                        select</a></div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

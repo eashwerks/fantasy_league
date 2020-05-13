@@ -7,6 +7,8 @@ from django.db import models, transaction
 from model_utils import Choices
 from model_utils.fields import StatusField
 
+from app_0.managers import AuthUserManager
+
 
 class AuthUser(AbstractBaseUser, PermissionsMixin):
     """
@@ -18,6 +20,7 @@ class AuthUser(AbstractBaseUser, PermissionsMixin):
     phone_number = models.CharField(max_length=24)
     first_name = models.CharField(max_length=32)
     last_name = models.CharField(max_length=32, null=True, blank=True)
+    is_staff = models.BooleanField(default=False)
 
     dp = models.FileField(upload_to='profile_picture', null=True, blank=True)
 
@@ -26,13 +29,28 @@ class AuthUser(AbstractBaseUser, PermissionsMixin):
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email', 'first_name', 'phone_number']
 
+    objects = AuthUserManager()
+
     def __str__(self):
         return self.username
+
+    @property
+    def full_name(self):
+        if self.last_name:
+            return '{} {}'.format(self.first_name, self.last_name)
+        return self.first_name
+
+    @transaction.atomic
+    def save(self, **kwargs):
+        if not self.id:
+            Team.objects.create(created_by=self)
+        return super(AuthUser, self).save(**kwargs)
 
 
 class IPLTeam(models.Model):
     name = models.CharField(max_length=120)
     image = models.ImageField(upload_to='team_images/')
+    description = models.TextField()
 
     def __str__(self):
         return self.name
@@ -45,8 +63,7 @@ class Player(models.Model):
     last_name = models.CharField(max_length=32, null=True, blank=True)
     category = StatusField(choices_name='CATEGORY')
     is_capped = models.BooleanField(default=False)
-    is_team_active = models.BooleanField(default=False)
-    ipl_team = models.ForeignKey(IPLTeam, on_delete=models.CASCADE)
+    ipl_team = models.ForeignKey(IPLTeam, on_delete=models.CASCADE, null=True, blank=True)
 
     dp = models.ImageField(upload_to='player_images', null=True, blank=True)
 
@@ -57,6 +74,12 @@ class Player(models.Model):
 
     def __str__(self):
         return self.last_name
+
+    @property
+    def full_name(self):
+        if self.last_name:
+            return '{} {}'.format(self.first_name, self.last_name)
+        return self.first_name
 
     def save(self, **kwargs):
         if self.is_capped:
@@ -80,6 +103,16 @@ class Team(models.Model):
     def __str__(self):
         return self.name
 
+    def save(self, **kwargs):
+        if not self.is_active:
+            self._deactivate_players()
+        return super(Team, self).save(**kwargs)
+
+    def _deactivate_players(self):
+        for item in self.team_players.all():
+            item.is_active = False
+            item.save()
+
 
 class TeamPlayerMappings(models.Model):
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
@@ -94,13 +127,7 @@ class TeamPlayerMappings(models.Model):
 
     @transaction.atomic
     def save(self, **kwargs):
-        if not self.id:
-            previous_team = self.model.objects.filter(player=self.player, is_active=True).last()
-            if previous_team:
-                previous_team.is_active = False
-                previous_team.save()
         self._update_points()
-        self._update_player_status()
         return super(TeamPlayerMappings, self).save(**kwargs)
 
     def _update_points(self):
@@ -114,11 +141,3 @@ class TeamPlayerMappings(models.Model):
         if not self.is_active:
             self.team.created_by.allocated_points = self.team.created_by.allocated_points + self.player.points
             self.team.created_by.save()
-
-    def _update_player_status(self):
-        player = self.player
-        if self.is_active:
-            player.is_team_active = True
-        if not self.is_active:
-            player.is_team_active = False
-        player.save()

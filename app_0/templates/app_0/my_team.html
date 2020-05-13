@@ -1,0 +1,157 @@
+{% extends "app_0/base.html" %}
+
+
+{% block content %}
+{% load static %}
+
+<section class="engine"><a href="https://mobirise.info/i">free web creation software</a></section>
+<section class="testimonials1 cid-rYN4pMmZ4Z" id="testimonials1-n">
+
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 align-center">
+                <h2 class="pb-3 mbr-fonts-style display-2">Your Team got 100 points</h2>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container pt-3 mt-2">
+        <div class="media-container-row">
+            <div class="mbr-testimonial p-3 align-center col-12 col-md-6 col-lg-4">
+                <div class="panel-item p-3">
+                    <div class="card-block">
+                        <div class="testimonial-photo">
+                            <img src="{% static 'assets/images/face1.jpg' %}">
+                        </div>
+                        <p class="mbr-text mbr-fonts-style display-7">Power player gives you more points</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="mbr-author-name mbr-bold mbr-fonts-style display-7">
+                            John Smith
+                        </div>
+                        <small class="mbr-author-desc mbr-italic mbr-light mbr-fonts-style display-7">
+                            Power Player</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mbr-testimonial p-3 align-center col-12 col-md-6 col-lg-4">
+                <div class="panel-item p-3">
+                    <div class="card-block">
+                        <div class="testimonial-photo">
+                            <img src="{% static 'assets/images/face2.jpg' %}">
+                        </div>
+                        <p class="mbr-text mbr-fonts-style display-7">Captian gives you more points
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="mbr-author-name mbr-bold mbr-fonts-style display-7">
+                            John Smith
+                        </div>
+                        <small class="mbr-author-desc mbr-italic mbr-light mbr-fonts-style display-7">
+                            Captian</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mbr-testimonial p-3 align-center col-12 col-md-6 col-lg-4">
+                <div class="panel-item p-3">
+                    <div class="card-block">
+                        <div class="testimonial-photo">
+                            <img src="{% static 'assets/images/face3.jpg' %}">
+                        </div>
+                        <p class="mbr-text mbr-fonts-style display-7">Vice Captian player gives you more points
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="mbr-author-name mbr-bold mbr-fonts-style display-7">
+                            John Smith
+                        </div>
+                        <small class="mbr-author-desc mbr-italic mbr-light mbr-fonts-style display-7">
+                            Vice Captain</small>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<section class="section-table cid-rYN5CbViGs" id="table1-o">
+
+
+    <div class="container container-table">
+        <h2 class="mbr-section-title mbr-fonts-style align-center pb-3 display-2">Players Listing</h2>
+
+        <div class="table-wrapper">
+            <div class="container">
+                <div class="row search">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-6">
+                        <div class="dataTables_filter">
+                            <label class="searchInfo mbr-fonts-style display-7">Search:</label>
+                            <input class="form-control input-sm" disabled="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container scroll">
+                <table class="table isSearch" cellspacing="0">
+                    <thead>
+                    <tr class="table-heads ">
+
+
+                        <th class="head-item mbr-fonts-style display-7">
+                            NAME
+                        </th>
+                        <th class="head-item mbr-fonts-style display-7">TEAM</th>
+                        <th class="head-item mbr-fonts-style display-7">
+                            POSITION
+                        </th>
+                        <th class="head-item mbr-fonts-style display-7">
+                            POINTS
+                        </th>
+                        <th class="head-item mbr-fonts-style display-7">
+                            ACTION
+                        </th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+
+                    {% for item in players %}
+                    <tr>
+                        <td class="body-item mbr-fonts-style display-7">{{ item.full_name }}</td>
+                        <td class="body-item mbr-fonts-style display-7">{{ item.ipl_team }}</td>
+                        <td class="body-item mbr-fonts-style display-7">{{ item.category }}</td>
+                        <td class="body-item mbr-fonts-style display-7">{{ item.points }}</td>
+                        <td class="body-item mbr-fonts-style display-7">Edit</td>
+                    </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="container table-info-container">
+                <div class="row info">
+                    <div class="col-md-6">
+                        <div class="dataTables_info mbr-fonts-style display-7">
+                            <span class="infoBefore">Showing</span>
+                            <span class="inactive infoRows"></span>
+                            <span class="infoAfter">entries</span>
+                            <span class="infoFilteredBefore">(filtered from</span>
+                            <span class="inactive infoRows"></span>
+                            <span class="infoFilteredAfter"> total entries)</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

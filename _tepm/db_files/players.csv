@@ -1,0 +1,352 @@
+First Name,Surname,Country,Specialism,Reserve Price Rs Lakh, C A U
+Martin,Guptill,New Zealand,BATSMEN,100,Capped
+Alex,Hales ,England,BATSMEN,150,Capped
+Shimron,Hetmyer,West Indies,BATSMEN,50,Capped
+Brendon,McCullum,New Zealand,BATSMEN,200,Capped
+Cheteshwar ,Pujara,India,BATSMEN,50,Capped
+Manoj ,Tiwary,India,BATSMEN,50,Capped
+Hanuma,Vihari,India,BATSMEN,50,Capped
+Carlos,Brathwaite,West Indies,ALL_ROUNDERS,75,Capped
+Moises,Henriques,Australia,ALL_ROUNDERS,100,Capped
+Chris,Jordan,England,ALL_ROUNDERS,100,Capped
+Axar ,Patel,India,ALL_ROUNDERS,100,Capped
+Yuvraj,Singh,India,ALL_ROUNDERS,100,Capped
+Gurkeerat,Singh,India,ALL_ROUNDERS,50,Capped
+Chris,Woakes ,England,ALL_ROUNDERS,200,Capped
+Jonny,Bairstow ,England,WICKET_KEEPERS,150,Capped
+Ben,McDermott,Australia,WICKET_KEEPERS,50,Capped
+Naman ,Ojha,India,WICKET_KEEPERS,75,Capped
+Nicholas,Pooran,West Indies,WICKET_KEEPERS,75,Capped
+Wriddhiman ,Saha,India,WICKET_KEEPERS,100,Capped
+Varun,Aaron,India,BOWLERS,50,Capped
+Lasith,Malinga,Sri Lanka,BOWLERS,200,Capped
+Mohammad,Shami,India,BOWLERS,100,Capped
+Ishant,Sharma,India,BOWLERS,75,Capped
+Mohit,Sharma,India,BOWLERS,50,Capped
+Jaydev,Unadkat,India,BOWLERS,150,Capped
+Fawad,Ahmed,Australia,BOWLERS,50,Capped
+Khary,Pierre,West Indies,BOWLERS,50,Capped
+Rahul,Sharma,India,BOWLERS,50,Capped
+Adam,Zampa,Australia,BOWLERS,100,Capped
+Sachin,Baby,India,BATSMEN,20,Uncapped
+Ankeet,Bawane,India,BATSMEN,20,Uncapped
+Armaan,Jaffer,India,BATSMEN,20,Uncapped
+Devdutt,Padikkal,India,BATSMEN,20,Uncapped
+Anmolpreet,Singh,India,BATSMEN,20,Uncapped
+Manan,Vohra,India,BATSMEN,20,Uncapped
+Ayush,Badoni,India,ALL_ROUNDERS,20,Uncapped
+Varun,Chakaravarthy,India,ALL_ROUNDERS,20,Uncapped
+Shivam,Dube,India,ALL_ROUNDERS,20,Uncapped
+Sarfaraz,Khan,India,ALL_ROUNDERS,20,Uncapped
+Akshdeep ,Nath,India,ALL_ROUNDERS,20,Uncapped
+Jalaj,Saxena,India,ALL_ROUNDERS,20,Uncapped
+Ankush,Bains,India,WICKET_KEEPERS,20,Uncapped
+Arun Karthick,Basker,India,WICKET_KEEPERS,20,Uncapped
+K.S,Bharat,India,WICKET_KEEPERS,20,Uncapped
+Baba,Indrajith,India,WICKET_KEEPERS,20,Uncapped
+Sheldon,Jackson,India,WICKET_KEEPERS,20,Uncapped
+Anuj,Rawat,India,WICKET_KEEPERS,20,Uncapped
+Aniket,Choudhary,India,BOWLERS,20,Uncapped
+Tushar,Deshpande,India,BOWLERS,20,Uncapped
+Rajneesh,Gurbani,India,BOWLERS,20,Uncapped
+Chama,Milind,India,BOWLERS,20,Uncapped
+Ishan,Porel,India,BOWLERS,20,Uncapped
+Nathu,Singh,India,BOWLERS,20,Uncapped
+Murugan,Ashwin,India,BOWLERS,20,Uncapped
+K C,Cariappa,India,BOWLERS,20,Uncapped
+Yuvraj,Chudasama,India,BOWLERS,20,Uncapped
+Zahir Khan,Pakteen,Afghanistan,BOWLERS,40,Uncapped
+Ravi ,Sai Kishore,India,BOWLERS,20,Uncapped
+Jagadeesha,Suchith,India,BOWLERS,20,Uncapped
+Hashim,Amla,South Africa,BATSMEN,100,Capped
+Reeza,Hendricks,South Africa,BATSMEN,50,Capped
+Colin,Ingram,South Africa,BATSMEN,200,Capped
+Usman,Khawaja,Australia,BATSMEN,100,Capped
+Shaun,Marsh,Australia,BATSMEN,200,Capped
+Saurabh,Tiwary,India,BATSMEN,50,Capped
+Hazratullah,Zazai,Afghanistan,BATSMEN,50,Capped
+Corey,Anderson,New Zealand,ALL_ROUNDERS,200,Capped
+Sam,Curran,England,ALL_ROUNDERS,200,Capped
+Rishi,Dhawan,India,ALL_ROUNDERS,50,Capped
+Jason,Holder,West Indies,ALL_ROUNDERS,75,Capped
+Angelo,Mathews,Sri Lanka,ALL_ROUNDERS,200,Capped
+James,Neesham,New Zealand,ALL_ROUNDERS,75,Capped
+Parvez,Rasool,India,ALL_ROUNDERS,50,Capped
+Heinrich,Klaasen,South Africa,WICKET_KEEPERS,50,Capped
+Kusal,Perera,Sri Lanka,WICKET_KEEPERS,75,Capped
+Glenn,Phillips,New Zealand,WICKET_KEEPERS,50,Capped
+Mushfiqur,Rahim,Bangladesh,WICKET_KEEPERS,50,Capped
+Luke,Ronchi,New Zealand,WICKET_KEEPERS,75,Capped
+Mithun,Abhimanyu,India,BOWLERS,50,Capped
+Lockie,Ferguson,New Zealand,BOWLERS,100,Capped
+ R Vinay ,Kumar,India,BOWLERS,50,Capped
+Morne,Morkel,South Africa,BOWLERS,150,Capped
+Kane,Richardson,Australia,BOWLERS,100,Capped
+Barinder,Sran,India,BOWLERS,50,Capped
+Dale,Steyn,South Africa,BOWLERS,150,Capped
+Ruturaj,Gaikwad,India,BATSMEN,20,Uncapped
+Priyam ,Garg,India,BATSMEN,20,Uncapped
+Amandeep,Khare,India,BATSMEN,20,Uncapped
+K Rohit,Rayudu,India,BATSMEN,20,Uncapped
+R ,Samarth,India,BATSMEN,20,Uncapped
+Tajinder,Dhillon,India,ALL_ROUNDERS,20,Uncapped
+Pravin,Dubey,India,ALL_ROUNDERS,20,Uncapped
+Shubham,Ranjane,India,ALL_ROUNDERS,20,Uncapped
+Sherfane,Rutherford,West Indies,ALL_ROUNDERS,40,Uncapped
+Atit,Sheth,India,ALL_ROUNDERS,20,Uncapped
+Ben,Dwarshuis,Australia,BOWLERS,30,Uncapped
+Anureet Singh,Kathuria,India,BOWLERS,30,Uncapped
+Ronit,More,India,BOWLERS,20,Uncapped
+Anrich,Nortje,South Africa,BOWLERS,20,Uncapped
+Ishwar ,Pandey,India,BOWLERS,30,Uncapped
+Qais,Ahmad,Afghanistan,BOWLERS,20,Uncapped
+Zeeshan,Ansari,India,BOWLERS,20,Uncapped
+Satyajeet,Bachhav,India,BOWLERS,20,Uncapped
+Bhargav,Bhatt,India,BOWLERS,20,Uncapped
+Rajesh,Bishnoi,India,BOWLERS,20,Uncapped
+Darren,Bravo,West Indies,BATSMEN,75,Capped
+Joe,Denly,England,BATSMEN,100,Capped
+Anton,Devcich,New Zealand,BATSMEN,50,Capped
+Faiz,Fazal,India,BATSMEN,50,Capped
+Aiden,Markram,South Africa,BATSMEN,50,Capped
+Stephan,Myburgh,Netherlands,BATSMEN,20,Associate
+Rilee,Rossouw,South Africa,BATSMEN,150,Capped
+Lendl,Simmons,West Indies,BATSMEN,75,Capped
+Luke,Wright,England,BATSMEN,150,Capped
+Dan,Christian,Australia,ALL_ROUNDERS,100,Capped
+JP,Duminy,South Africa,ALL_ROUNDERS,100,Capped
+James,Faulkner,Australia,ALL_ROUNDERS,150,Capped
+Irfan,Pathan,India,ALL_ROUNDERS,50,Capped
+Thisara,Perera,Sri Lanka,ALL_ROUNDERS,50,Capped
+Rovman,Powell,West Indies,ALL_ROUNDERS,50,Capped
+Darcy,Short,Australia,ALL_ROUNDERS,200,Capped
+Alex,Carey,Australia,WICKET_KEEPERS,150,Capped
+Johnson,Charles,West Indies,WICKET_KEEPERS,50,Capped
+Andre,Fletcher,West Indies,WICKET_KEEPERS,50,Capped
+Shafiqullah,Shafiq,Afghanistan,WICKET_KEEPERS,50,Capped
+Mohammad,Shahzad,Afghanistan,WICKET_KEEPERS,50,Capped
+Brendan,Taylor,Zimbabwe,WICKET_KEEPERS,50,Capped
+Manpreet,Grewal,India,BOWLERS,50,Capped
+Ali,Khan,United States of America,BOWLERS,40,Associate
+Ben,Laughlin,Australia,BOWLERS,100,Capped
+Tymal,Mills,England,BOWLERS,75,Capped
+Gulbadin,Naib,Afghanistan,BOWLERS,50,Capped
+James,Pattinson,Australia,BOWLERS,100,Capped
+Oshane,Thomas,West Indies,BOWLERS,50,Capped
+Hardus,Viljoen,South Africa,BOWLERS,75,Capped
+Mark,Wood,England,BOWLERS,100,Capped
+Unmukt ,Chand,India,BATSMEN,20,Uncapped
+Abhimanyu,Easwaran,India,BATSMEN,20,Uncapped
+Chirag,Gandhi,India,BATSMEN,20,Uncapped
+Kattingeri Ashwin,Hebbar,India,BATSMEN,20,Uncapped
+Himanshu,Rana,India,BATSMEN,20,Uncapped
+Sarthak,Ranjan,India,BATSMEN,20,Uncapped
+Akshath ,Reddy,India,BATSMEN,20,Uncapped
+Himmat,Singh,India,BATSMEN,20,Uncapped
+Baba,Aparajith,India,ALL_ROUNDERS,20,Uncapped
+Sandeep,Bavanaka,India,ALL_ROUNDERS,20,Uncapped
+Akash,Bhandari,India,ALL_ROUNDERS,20,Uncapped
+Subodh,Bhati,India,ALL_ROUNDERS,20,Uncapped
+Hiten,Dalal,India,ALL_ROUNDERS,20,Uncapped
+Chris,Green,Australia,ALL_ROUNDERS,30,Uncapped
+Lewis,Gregory,England,ALL_ROUNDERS,40,Uncapped
+Karim,Janat,Afghanistan,ALL_ROUNDERS,20,Uncapped
+Saurabh,Kumar,India,ALL_ROUNDERS,20,Uncapped
+Diwesh,Pathania,India,ALL_ROUNDERS,20,Uncapped
+Bipul,Sharma,India,ALL_ROUNDERS,20,Uncapped
+Atharwa,Taide,India,ALL_ROUNDERS,20,Uncapped
+Mohammed,Azharudeen,India,WICKET_KEEPERS,20,Uncapped
+Harvik ,Desai,India,WICKET_KEEPERS,20,Uncapped
+Kedar,Devdhar,India,WICKET_KEEPERS,20,Uncapped
+Nikhil,Naik,India,WICKET_KEEPERS,20,Uncapped
+Mahesh ,Rawat,India,WICKET_KEEPERS,20,Uncapped
+Ryan,Rickelton,South Africa,WICKET_KEEPERS,20,Uncapped
+Jitesh,Sharma,India,WICKET_KEEPERS,20,Uncapped
+Aniruda,Srikkanth,India,WICKET_KEEPERS,30,Uncapped
+Vishnu,Vinod,India,WICKET_KEEPERS,20,Uncapped
+Patrick,Brown,England,BOWLERS,40,Uncapped
+Manjeetkumar,Chaudhary,India,BOWLERS,20,Uncapped
+Yash ,Dayal,India,BOWLERS,20,Uncapped
+Royston,Dias,India,BOWLERS,20,Uncapped
+Umar Nazir,Mir,India,BOWLERS,20,Uncapped
+Chetan,Sakariya,India,BOWLERS,20,Uncapped
+Pradeep,Sangwan,India,BOWLERS,30,Uncapped
+Kuldeep ,Sen,India,BOWLERS,20,Uncapped
+Kanishk,Seth,India,BOWLERS,20,Uncapped
+Rahul,Shukla,India,BOWLERS,20,Uncapped
+Arshdeep,Singh,India,BOWLERS,20,Uncapped
+Jaskaran,Singh,India,BOWLERS,20,Uncapped
+Aaron,Summers,Australia,BOWLERS,20,Uncapped
+Sandeep,Warrier,India,BOWLERS,20,Uncapped
+Siddharth,Desai,India,BOWLERS,20,Uncapped
+Rajat,Goel,India,BOWLERS,20,Uncapped
+Pappu,Roy,India,BOWLERS,20,Uncapped
+Pradeep,Sahu,India,BOWLERS,20,Uncapped
+Karanveer,Singh,India,BOWLERS,20,Uncapped
+Gurvinder,Singh,India,BOWLERS,20,Uncapped
+Kushaal,Wadhwani,India,BOWLERS,20,Uncapped
+Fabian,Allen,West Indies,ALL_ROUNDERS,50,Capped
+Doug,Bracewell,New Zealand,ALL_ROUNDERS,50,Capped
+Sikandar,Raza,Zimbabwe,ALL_ROUNDERS,75,Capped
+Mohammed,Mahmudullah,Bangladesh,ALL_ROUNDERS,50,Capped
+Paul,Stirling,Ireland,ALL_ROUNDERS,50,Capped
+Ashton,Turner,Australia,ALL_ROUNDERS,50,Capped
+David,Wiese,South Africa,ALL_ROUNDERS,75,Capped
+Sean,Abbott,Australia,BOWLERS,50,Capped
+Junior,Dala,South Africa,BOWLERS,50,Capped
+Ashoke,Dinda,India,BOWLERS,50,Capped
+Harry,Gurney,England,BOWLERS,75,Capped
+Matt,Henry,New Zealand,BOWLERS,75,Capped
+Obed,Mccoy,West Indies,BOWLERS,50,Capped
+Seth,Rance,New Zealand,BOWLERS,50,Capped
+Tanmay,Agarwal,India,BATSMEN,20,Uncapped
+Harpreet,Bhatia,India,BATSMEN,20,Uncapped
+Ishank,Jaggi,India,BATSMEN,20,Uncapped
+Sharad ,Lumba,India,BATSMEN,20,Uncapped
+Tanmay,Mishra,India,BATSMEN,20,Uncapped
+Virat ,Singh,India,BATSMEN,20,Uncapped
+Treyaksh ,Bali,India,ALL_ROUNDERS,20,Uncapped
+Ajit,Chahal,India,ALL_ROUNDERS,20,Uncapped
+Pankaj,Jaswal,India,ALL_ROUNDERS,20,Uncapped
+Roosh,Kalaria,India,ALL_ROUNDERS,20,Uncapped
+Milind,Kumar,India,ALL_ROUNDERS,20,Uncapped
+Shamss,Mulani,India,ALL_ROUNDERS,20,Uncapped
+Darshan,Nalkande,India,ALL_ROUNDERS,20,Uncapped
+Sairaj,Patil,India,ALL_ROUNDERS,20,Uncapped
+Jack,Prestwidge,Australia,ALL_ROUNDERS,20,Uncapped
+Swapnil,Singh,India,ALL_ROUNDERS,20,Uncapped
+Shashank,Singh,India,ALL_ROUNDERS,20,Uncapped
+Lalit,Yadav,India,ALL_ROUNDERS,20,Uncapped
+Samarpit,Joshi,India,WICKET_KEEPERS,20,Uncapped
+Aryan,Juyal,India,WICKET_KEEPERS,20,Uncapped
+Sumanth,Kolla,India,WICKET_KEEPERS,20,Uncapped
+Anmol,Malhotra,India,WICKET_KEEPERS,20,Uncapped
+Urvil,Patel,India,WICKET_KEEPERS,20,Uncapped
+Sharath,Ravi,India,WICKET_KEEPERS,20,Uncapped
+Ajay,Rohera,India,WICKET_KEEPERS,20,Uncapped
+Prabhsimran,Singh,India,WICKET_KEEPERS,20,Uncapped
+Upendra Singh,Yadav,India,WICKET_KEEPERS,20,Uncapped
+Badrey,Alam,India,BOWLERS,20,Uncapped
+Bandaru,Ayyappa,India,BOWLERS,20,Uncapped
+Stephen,Chipurupalli,India,BOWLERS,20,Uncapped
+Rasikh,Dar,India,BOWLERS,20,Uncapped
+Mohit,Jangra,India,BOWLERS,20,Uncapped
+Suraj,Kamath,India,BOWLERS,20,Uncapped
+Mohsin,Khan,India,BOWLERS,20,Uncapped
+Ravi Kiran,Majeti,India,BOWLERS,20,Uncapped
+Nidheesh,MD,India,BOWLERS,20,Uncapped
+Safvan,Patel,India,BOWLERS,20,Uncapped
+Kushang,Patel,India,BOWLERS,20,Uncapped
+Tanveer,Ul Haq,India,BOWLERS,20,Uncapped
+Lalith ,Yadav,India,BOWLERS,20,Uncapped
+Prithvi Raj,Yarra,India,BOWLERS,20,Uncapped
+Robbie,Frylinck,South Africa,ALL_ROUNDERS,50,Capped
+Liam,Livingstone,England,ALL_ROUNDERS,50,Capped
+Jeevan,Mendis,Sri Lanka,ALL_ROUNDERS,50,Capped
+Keemo,Paul,West Indies,ALL_ROUNDERS,50,Capped
+Vernon,Philander,South Africa,ALL_ROUNDERS,50,Capped
+Dasun,Shanaka,Sri Lanka,ALL_ROUNDERS,50,Capped
+Isuru,Udana,Sri Lanka,ALL_ROUNDERS,50,Capped
+Sheldon,Cottrell,West Indies,BOWLERS,50,Capped
+Marchant,De Lange,South Africa,BOWLERS,75,Capped
+Steven,Finn,England,BOWLERS,100,Capped
+Dane,Paterson,South Africa,BOWLERS,50,Capped
+Sayed,Shirzad,Afghanistan,BOWLERS,50,Capped
+Sudeep,Tyagi,India,BOWLERS,50,Capped
+Neil,Wagner,New Zealand,BOWLERS,50,Capped
+Rajesh,Bishnoi Sr ,India,BATSMEN,20,Uncapped
+Laurie,Evans,England,BATSMEN,40,Uncapped
+Swapnil,Gugale,India,BATSMEN,20,Uncapped
+Priyank,Panchal,India,BATSMEN,20,Uncapped
+Rajat,Patidar,India,BATSMEN,20,Uncapped
+Dwaraka,Ravi Teja,India,BATSMEN,20,Uncapped
+Prayas Ray ,Barman,India,ALL_ROUNDERS,20,Uncapped
+Cameron,Delport,South Africa,ALL_ROUNDERS,30,Uncapped
+Ashok,Menaria,India,ALL_ROUNDERS,20,Uncapped
+Jamie,Overton,England,ALL_ROUNDERS,40,Uncapped
+Riyan,Parag,India,ALL_ROUNDERS,20,Uncapped
+Akash,Parkar,India,ALL_ROUNDERS,20,Uncapped
+Jason,Sangha,Australia,ALL_ROUNDERS,20,Uncapped
+Pratyush,Singh,India,ALL_ROUNDERS,20,Uncapped
+Shamar,Springer,West Indies,ALL_ROUNDERS,20,Uncapped
+Milind,Tandon,India,ALL_ROUNDERS,20,Uncapped
+R,Vivek,India,ALL_ROUNDERS,20,Uncapped
+R.Sanjay,Yadav,India,ALL_ROUNDERS,20,Uncapped
+Ravi ,Balhara,India,BOWLERS,20,Uncapped
+Ashish,Hooda,India,BOWLERS,20,Uncapped
+Lukman Hussain,Meriwala,India,BOWLERS,20,Uncapped
+Babasafi,Pathan,India,BOWLERS,20,Uncapped
+Pankaj ,Rao,India,BOWLERS,20,Uncapped
+Anupam,Sanklecha,India,BOWLERS,20,Uncapped
+Lutho,Sipamla,South Africa,BOWLERS,20,Uncapped
+Pawan,Suyal,India,BOWLERS,20,Uncapped
+Blair,Tickner,New Zealand,BOWLERS,20,Uncapped
+Kartik,Tyagi,India,BOWLERS,20,Uncapped
+K,Vignesh,India,BOWLERS,30,Uncapped
+Ajay,Yadav,India,BOWLERS,20,Uncapped
+Kuldip,Yadav,India,BOWLERS,20,Uncapped
+Liam,Dawson,England,ALL_ROUNDERS,150,Capped
+Ryan,Mclaren,South Africa,ALL_ROUNDERS,50,Capped
+ Riley, Meredith, Australia, Bowler,40,Uncapped
+Samit,Patel,England,ALL_ROUNDERS,50,Capped
+Eoin,Morgan,England,BATSMEN,200,Capped
+Dwayne,Smith,West Indies,ALL_ROUNDERS,75,Capped
+Jon-Jon,Smuts,South Africa,ALL_ROUNDERS,50,Capped
+Jack,Wildermuth,Australia,ALL_ROUNDERS,50,Capped
+Johannes,Malan,South Africa,BATSMEN,20,Uncapped
+Shubham Singh,Rohilla,India,BATSMEN,20,Uncapped
+Ganesh,Satish,India,BATSMEN,20,Uncapped
+Naushad,Shaikh,India,BATSMEN,20,Uncapped
+Pite,Van Biljon,South Africa,BATSMEN,20,Uncapped
+Jake,Weatherald,Australia,BATSMEN,20,Uncapped
+Iqbal,Abdullah,India,ALL_ROUNDERS,20,Uncapped
+Shubham,Agrawal,India,ALL_ROUNDERS,20,Uncapped
+Agnivesh,Ayachi,India,ALL_ROUNDERS,20,Uncapped
+Jay,Bista,India,ALL_ROUNDERS,20,Uncapped
+Harpreet ,Brar,India,ALL_ROUNDERS,20,Uncapped
+Vinod ,C V,India,ALL_ROUNDERS,20,Uncapped
+Akshay ,Chandran,India,ALL_ROUNDERS,20,Uncapped
+Arun,Chaprana,India,ALL_ROUNDERS,20,Uncapped
+Shiva,Chauhan,India,ALL_ROUNDERS,20,Uncapped
+Ankit,Sharma,India,ALL_ROUNDERS,20,Uncapped
+Jason,Smith,South Africa,ALL_ROUNDERS,20,Uncapped
+Shadley,Van Schalkwyk,South Africa,ALL_ROUNDERS,20,Uncapped
+Manzoor,Dar,India,ALL_ROUNDERS,20,Uncapped
+Puneet,Datey,India,ALL_ROUNDERS,20,Uncapped
+Pavan,Deshpande,India,ALL_ROUNDERS,20,Uncapped
+Aakarshit,Gomel,India,ALL_ROUNDERS,20,Uncapped
+Mehdi,Hasan,India,ALL_ROUNDERS,20,Uncapped
+Akhil,Herwadkar,India,ALL_ROUNDERS,20,Uncapped
+Venkatesh,Iyer,India,ALL_ROUNDERS,20,Uncapped
+Dharmendrasinh,Jadeja,India,ALL_ROUNDERS,20,Uncapped
+Anirudha,Joshi,India,ALL_ROUNDERS,20,Uncapped
+Akshay,Karnewar,India,ALL_ROUNDERS,20,Uncapped
+Aman,Khan,India,ALL_ROUNDERS,20,Uncapped
+Shrikant,Mundhe,India,ALL_ROUNDERS,20,Uncapped
+Shreekant,Wagh,India,ALL_ROUNDERS,20,Uncapped
+Karanveer,Kaushal,India,ALL_ROUNDERS,20,Uncapped
+Chirag,Khurana,India,ALL_ROUNDERS,20,Uncapped
+Tanush,Kotian,India,ALL_ROUNDERS,20,Uncapped
+Vishal ,Kushwah,India,ALL_ROUNDERS,20,Uncapped
+Dhrumil,Matkar,India,ALL_ROUNDERS,20,Uncapped
+Akul,Pandove,India,ALL_ROUNDERS,20,Uncapped
+Suyash,Prabhudessai,India,ALL_ROUNDERS,20,Uncapped
+Suryakant,Pradhan,India,ALL_ROUNDERS,20,Uncapped
+T,Ravi Teja,India,ALL_ROUNDERS,20,Uncapped
+Dhruva Kumar  ,Reddy,India,ALL_ROUNDERS,20,Uncapped
+Sumit,Ruikar,India,ALL_ROUNDERS,20,Uncapped
+Aaron,Hardie,Australia,ALL_ROUNDERS,20,Uncapped
+Jatin,Saxena,India,ALL_ROUNDERS,20,Uncapped
+Ekant,Sen,India,ALL_ROUNDERS,20,Uncapped
+Kshitiz,Sharma,India,ALL_ROUNDERS,20,Uncapped
+Mrinank,Singh,India,ALL_ROUNDERS,20,Uncapped
+Mukesh Kumar,Singh,India,ALL_ROUNDERS,20,Uncapped
+Vivek,Singh,India,ALL_ROUNDERS,20,Uncapped
+Sanvir ,Singh,India,ALL_ROUNDERS,20,Uncapped
+Shiva,Singh,India,ALL_ROUNDERS,20,Uncapped
+Gurinder ,Singh,India,ALL_ROUNDERS,20,Uncapped
+Utkarsh,Singh,India,ALL_ROUNDERS,20,Uncapped
+Mayank,Dagar,India,ALL_ROUNDERS,20,Uncapped
+Rassie,Van Der Dussen,South Africa,BATSMEN,50,Capped
+Pranav,Gupta,India,BATSMEN,20,Uncapped
+Harsh,Tyagi,India,ALL_ROUNDERS,20,Uncapped

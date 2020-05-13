@@ -1,10 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
+{% load static %}
+<html>
 <head>
+    <!-- Site made with Mobirise Website Builder v4.12.3, https://mobirise.com -->
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v4.12.3, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="{% static 'assets/images/fantasylogopng.png' %}" type="image/x-icon">
+    <meta name="description" content="">
+
+
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'assets/web/assets/mobirise-icons/mobirise-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap-grid.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap-reboot.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/socicon/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/tether/tether.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/datatables/data-tables.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/dropdown/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/theme/css/style.css' %}">
+    <link rel="preload" as="style" href="{% static 'assets/mobirise/css/mbr-additional.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/mobirise/css/mbr-additional.css' %}" type="text/css">
+
+
 </head>
 <body>
+<section class="menu cid-rYLY08sDAS" once="menu" id="menu1-1">
+
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="https://fl.com">
+                         <img src="{% static 'assets/images/fantasylogopng.png' %}" alt="Logo" title=""
+                              style="height: 3.8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-black display-4" href="{% url 'index-view'%}">
+                        FANTASY LEAGUE</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                <li class="nav-item">
+                    <a class="nav-link link text-black display-4" href="https://fl.com">
+                        <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>
+                        Services
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link text-black display-4" href="https://fl.com"><span
+                            class="mbri-flag mbr-iconfont mbr-iconfont-btn"></span>
+
+                        Matches</a>
+                </li>
+                <li class="nav-item dropdown open"><a class="nav-link link text-black dropdown-toggle display-4"
+                                                      href="https://fl.com" data-toggle="dropdown-submenu"
+                                                      aria-expanded="true"><span
+                        class="mbri-user mbr-iconfont mbr-iconfont-btn"></span>
+
+                    Profile</a>
+                    <div class="dropdown-menu"><a class="text-black dropdown-item display-4" href="{% url 'my-team-view' %}">My
+                        team</a><a class="text-black dropdown-item display-4" href="https://fl.com">Points</a></div>
+                </li>
+            </ul>
+            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4"
+                                                           href="https://fl.com"><span
+                    class="mbri-login mbr-iconfont mbr-iconfont-btn"></span>
+                Login</a></div>
+        </div>
+    </nav>
+</section>
+
+{% block content %}
+{% endblock %}
+
+
+<section once="footers" class="cid-rYM9ygleue" id="footer7-d">
+
+
+    <div class="container">
+        <div class="media-container-row align-center mbr-white">
+            <div class="row row-links">
+                <ul class="foot-menu">
+
+
+                    <li class="foot-menu-item mbr-fonts-style display-7">Home</li>
+                    <li class="foot-menu-item mbr-fonts-style display-7">Matches</li>
+                </ul>
+            </div>
+            <div class="row social-row">
+                <div class="social-list align-right pb-2">
+
+
+                    <div class="soc-item">
+                        <a href="https://twitter.com/" target="_blank">
+                            <span class="mbr-iconfont mbr-iconfont-social socicon-twitter socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://www.facebook.com/" target="_blank">
+                            <span class="mbr-iconfont mbr-iconfont-social socicon-facebook socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://www.youtube.com/" target="_blank">
+                            <span class="mbr-iconfont mbr-iconfont-social socicon-youtube socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://instagram.com/" target="_blank">
+                            <span class="mbr-iconfont mbr-iconfont-social socicon-instagram socicon"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-copirayt">
+                <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
+                    © Copyright 2020 Fantasy League - All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="{% static 'assets/web/assets/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'assets/popper/popper.min.js' %}"></script>
+<script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/smoothscroll/smooth-scroll.js' %}"></script>
+<script src="{% static 'assets/tether/tether.min.js' %}"></script>
+<script src="{% static 'assets/touchswipe/jquery.touch-swipe.min.js' %}"></script>
+<script src="{% static 'assets/parallax/jarallax.min.js' %}"></script>
+<script src="{% static 'assets/datatables/jquery.data-tables.min.js' %}"></script>
+<script src="{% static 'assets/datatables/data-tables.bootstrap4.min.js' %}"></script>
+<script src="{% static 'assets/dropdown/js/nav-dropdown.js' %}"></script>
+<script src="{% static 'assets/dropdown/js/navbar-dropdown.js' %}"></script>
+<script src="{% static 'assets/theme/js/script.js' %}"></script>
+
 
 </body>
 </html>
