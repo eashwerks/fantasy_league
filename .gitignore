@@ -9,3 +9,5 @@ staticfiles
 *sublime*
 # Byte-compiled / optimized / DLL files
 __pycache__/
+
+venv/
