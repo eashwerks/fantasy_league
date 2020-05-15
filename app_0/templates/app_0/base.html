@@ -49,11 +49,13 @@
                               style="height: 3.8rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-black display-4" href="{% url 'index-view'%}">
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-black display-4"
+                                                     href="{% url 'index-view'%}">
                         FANTASY LEAGUE</a></span>
             </div>
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            {% if user.is_authenticated %}
             <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
                 <li class="nav-item">
                     <a class="nav-link link text-black display-4" href="#">
@@ -73,14 +75,21 @@
                         class="mbri-user mbr-iconfont mbr-iconfont-btn"></span>
 
                     Profile</a>
-                    <div class="dropdown-menu"><a class="text-black dropdown-item display-4" href="{% url 'my-team-view' %}">My
+                    <div class="dropdown-menu"><a class="text-black dropdown-item display-4"
+                                                  href="{% url 'my-team-view' %}">My
                         team</a><a class="text-black dropdown-item display-4" href="#">Points</a></div>
                 </li>
             </ul>
+            {% endif %}
             <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4"
-                                                           href="#"><span
+                                                           href="{% url 'logout-view'%}"><span
                     class="mbri-login mbr-iconfont mbr-iconfont-btn"></span>
-                Login</a></div>
+                {% if user.is_authenticated %}
+                Logout
+                {% else %}
+                Register
+                {% endif %}
+            </a></div>
         </div>
     </nav>
 </section>

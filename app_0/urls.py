@@ -10,7 +10,6 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
 from django.urls import path
 
 from app_0 import views
@@ -20,4 +19,7 @@ urlpatterns = [
     path('iplTeams/', views.team_view, name='team-view'),
     path('leaderBoard/', views.leader_board_view, name='leader-board-view'),
     path('myTeam/', views.my_team_view, name='my-team-view'),
+    path('login/', views.login_view, name='login-view'),
+    path('logout/', views.logout_view, name='logout-view'),
+
 ]
