@@ -81,15 +81,32 @@
                 </li>
             </ul>
             {% endif %}
-            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4"
-                                                           href="{% url 'logout-view'%}"><span
-                    class="mbri-login mbr-iconfont mbr-iconfont-btn"></span>
+            <div class="navbar-buttons mbr-section-btn">
+
                 {% if user.is_authenticated %}
-                Logout
+                <a class="btn btn-sm btn-primary display-4"
+                   href="{% url 'logout-view'%}"><span
+                        class="mbri-login mbr-iconfont mbr-iconfont-btn"></span>
+                    Logout
+                </a>
+
                 {% else %}
-                Register
+                {% if type == 'login' %}
+                <a class="btn btn-sm btn-primary display-4"
+                   href="{% url 'register-view'%}"><span
+                        class="mbri-login mbr-iconfont mbr-iconfont-btn"></span>
+                    Register
+                </a>
                 {% endif %}
-            </a></div>
+                {% if type == 'register' %}
+                <a class="btn btn-sm btn-primary display-4"
+                   href="{% url 'login-view'%}"><span
+                        class="mbri-login mbr-iconfont mbr-iconfont-btn"></span>
+                    Login
+                </a>
+                {% endif %}
+                {% endif %}
+            </div>
         </div>
     </nav>
 </section>
