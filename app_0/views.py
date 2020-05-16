@@ -68,9 +68,11 @@ def login_view(request):
     template_name = 'app_0/login.html'
     context = {}
     error_message = ''
+    _type = 'login'
     if request.method == 'GET':
         if request.user.is_authenticated:
             return redirect(start)
+        context['type'] = _type
         return render(request, template_name, context)
     if request.method == 'POST':
         email = request.POST.get('email', None)
@@ -92,6 +94,7 @@ def login_view(request):
         context['email'] = email
         context['password'] = password
         context['error_message'] = error_message
+        context['type'] = _type
         return render(request, template_name, context)
 
 
@@ -100,3 +103,43 @@ def logout_view(request):
         if request.user.is_authenticated:
             logout(request)
     return redirect(start)
+
+
+def register_view(request):
+    template_name = 'app_0/register.html'
+    context = {}
+    error_message = ''
+    _type = 'register'
+    if request.method == 'GET':
+        if request.user.is_authenticated:
+            return redirect(start)
+        context['type'] = _type
+        return render(request, template_name, context)
+    if request.method == 'POST':
+        first_name = request.POST.get('first_name', None)
+        last_name = request.POST.get('last_name', None)
+        email = request.POST.get('email', None)
+        phone = request.POST.get('phone', None)
+        password = request.POST.get('password', None)
+
+        try:
+            if email and password and first_name and phone:
+                user = AuthUser.objects.create_user(email, phone, first_name, email, password)
+                if last_name:
+                    user.last_name = last_name
+                    user.save()
+                login(request, user)
+                return redirect(start)
+            else:
+                error_message = 'All fields except Surname required'
+        except Exception as err:
+            error_message = err
+
+        context['first_name'] = first_name
+        context['last_name'] = last_name
+        context['email'] = email
+        context['phone'] = phone
+        context['password'] = password
+        context['error_message'] = error_message
+        context['type'] = _type
+        return render(request, template_name, context)
