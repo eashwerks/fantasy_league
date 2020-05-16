@@ -109,6 +109,21 @@
                     <input type="file" id="teamPhoto" class="form-control-file">
                 </div>
                 <div class="form-group">
+                  <label>Player Type</label>
+                  <br>
+                  <input type="radio" name="playerType" id="cappedPlayer"><label for="cappedPlayer"> Capped</label>
+                  <input type="radio" name="playerType" id="unCappedPlayer"><label for="unCappedPlayer"> Uncapped</label>
+                </div>
+                <div class="form-group">
+                  <label for="playerSpecialisation">Player Specialisation</label>
+                  <select name="" id="playerSpecialisation" class="form-control">
+                    <option selected disabled>- Select Specialisation</option>
+                    <option>Specialisation 1</option>
+                    <option>Specialisation 2</option>
+                    <option>Specialisation 3</option>
+                  </select>
+                </div>
+                <div class="form-group">
                     <label for="teamDescription">Player Bio</label>
                     <textarea name="" id="teamDescription" class="form-control" placeholder="Type Player Bio"></textarea>
                 </div>
@@ -128,6 +143,8 @@
                     <tr>
                       <th>No</th>                      
                       <th>Name</th>
+                      <th>Type</th>
+                      <th>Specialisation</th>
                       <th>Bio</th>
                       <th>Action</th>
                     </tr>
@@ -136,6 +153,8 @@
                     <tr>
                       <td>1</td>
                       <td>Dhoni</td>
+                      <td>Capped</td>
+                      <td>Nothing</td>
                       <td>Helping text</td>
                       <td>
                           <a class="btn btn-primary" data-toggle="modal" data-target="#editPlayer"><i class="fa fa-pencil"></i></a>
@@ -145,6 +164,8 @@
                     <tr>
                         <td>2</td>
                         <td>Aswin</td>
+                        <td>Capped</td>
+                        <td>Nothing</td>
                         <td>Helping text</td>
                         <td>
                             <a class="btn btn-primary" data-toggle="modal" data-target="#editPlayer"><i class="fa fa-pencil"></i></a>
@@ -154,6 +175,8 @@
                     <tr>
                         <td>3</td>
                         <td>Jadega</td>
+                        <td>Capped</td>
+                        <td>Nothing</td>
                         <td>Helping text</td>
                         <td>
                             <a class="btn btn-primary" data-toggle="modal" data-target="#editPlayer"><i class="fa fa-pencil"></i></a>
@@ -213,7 +236,19 @@
                         <label for="editTeamname">Player Name</label>
                         <input type="text" name="" id="editTeamname" placeholder="Player Name" class="form-control">
                         <label for="editTeamPhoto">Player Photo</label>
-                        <input type="file" name="" id="editTeamPhoto" class="form-control-file">                        
+                        <input type="file" name="" id="editTeamPhoto" class="form-control-file">    
+                        <label>Player Type</label>
+                        <br>
+                        <input type="radio" name="editPlayerType" id="editCappedPlayer"><label for="editCappedPlayer"> Capped</label>
+                        <input type="radio" name="editPlayerType" id="editUnCappedPlayer"><label for="editUnCappedPlayer"> Uncapped</label> 
+                        <br>  
+                        <label for="editPlayerSpecialisation">Player Specialisation</label>
+                        <select name="" id="editPlayerSpecialisation" class="form-control">
+                          <option selected disabled>- Select Specialisation</option>
+                          <option>Specialisation 1</option>
+                          <option>Specialisation 2</option>
+                          <option>Specialisation 3</option>
+                        </select>                 
                         <label for="teamDescription">Player Bio</label>
                         <textarea name="" id="teamDescription" class="form-control" placeholder="Type Player Bio"></textarea>                       
                     </div>
