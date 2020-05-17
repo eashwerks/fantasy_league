@@ -1,0 +1,108 @@
+{% extends "admin_1/base.html" %}
+
+{% block content %}
+<!-- Breadcrumbs-->
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{% url 'dash-board-view' %}">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Teams</li>
+    </ol>
+    <div class="row">
+        <div class="col-12">
+            <div class="jumbotron">
+                <lable class="text-danger">{{ error_message }}</lable>
+                <h2 class="lead"><u>Add Teams</u></h2>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="teamName">Team Name</label>
+                        <input type="text" name="teamName" id="teamName" class="form-control"
+                               placeholder="Type Team Name"
+                               value="{{ name }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="teamPhoto">Team Photo</label>
+                        <input type="file" name="teamPhoto" id="teamPhoto" class="form-control-file">
+                    </div>
+                    <div class="form-group">
+                        <label for="teamDescription">Team Description</label>
+                        <textarea name="teamDescription" id="teamDescription" class="form-control"
+                                  placeholder="Type Team Description">{{ description }}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h3>Teams</h3>
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in teams %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.description }}</td>
+                        <td>
+                            <a class="btn btn-primary" data-toggle="modal" data-target="#editTeam"><i
+                                    class="fa fa-pencil"></i></a>
+                            <a class="btn btn-danger" href="{% url 'delete-team' item.id %}"><i class="fa fa-trash"></i></a>
+                            <a class="btn btn-success" href="add-player.html">Add Players</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block modal %}
+<div class="modal fade" id="editTeam" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Team</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <form action="">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="editTeamname">Team Name</label>
+                        <input type="text" name="" id="editTeamname" placeholder="Team Name" class="form-control">
+                        <label for="editTeamPhoto">Team Photo</label>
+                        <input type="file" name="" id="editTeamPhoto" class="form-control-file">
+                        <label for="editTeamDescription">Team Description</label>
+                        <textarea name="" id="editTeamDescription" class="form-control"
+                                  placeholder="Type Team Description"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <input type="submit" value="Save" class="btn btn-primary">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

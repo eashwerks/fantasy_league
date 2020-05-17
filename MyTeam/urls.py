@@ -23,6 +23,7 @@ from app_0 import views
 urlpatterns = [
                   path('admin/', admin.site.urls),
                   path('secure/', include('app_0.urls')),
+                  path('secure/admin/', include('admin_1.urls')),
                   path('', views.start),
 
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL,

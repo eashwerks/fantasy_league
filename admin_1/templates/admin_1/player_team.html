@@ -1,0 +1,39 @@
+{% extends "admin_1/base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="index.html">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Players</li>
+    </ol>
+    <div class="row">
+        <div class="col-12">
+            <!-- <h1>Players from Teams</h1> -->
+            <p>Select players from Teams</p>
+        </div>
+    </div>
+    <div class="row">
+        {% for item in teams %}
+        <div class="col-xl-3 col-sm-6 mb-3">
+            <div class="card text-white bg-primary o-hidden h-100">
+                <div class="card-body">
+                    <div class="card-body-icon">
+                        <i class="fa fa-fw fa-list"></i>
+                    </div>
+                    <div class="mr-5">{{item.name}} ({{item.player_count}})</div>
+                </div>
+                <a class="card-footer text-white clearfix small z-1" href="{% url 'admin-player-view' item.id %}">
+                    <span class="float-left">View Players</span>
+                    <span class="float-right">
+                <i class="fa fa-angle-right"></i>
+              </span>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+

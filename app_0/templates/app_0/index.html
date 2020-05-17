@@ -59,9 +59,9 @@
                     <tbody>
                     {% for item in l_board %}
                     <tr>
-                        <td class="body-item mbr-fonts-style display-7">#1</td>
+                        <td class="body-item mbr-fonts-style display-7">#{{forloop.counter}}</td>
                         <td class="body-item mbr-fonts-style display-7">{{item.full_name}}</td>
-                        <td class="body-item mbr-fonts-style display-7">{{ item.allocated_points }}</td>
+                        <td class="body-item mbr-fonts-style display-7">{{ item.points }}</td>
                     </tr>
                     {% endfor %}
                     </tbody>

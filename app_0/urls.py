@@ -22,5 +22,7 @@ urlpatterns = [
     path('login/', views.login_view, name='login-view'),
     path('logout/', views.logout_view, name='logout-view'),
     path('register/', views.register_view, name='register-view'),
+    path('players/<int:pk>', views.select_player_view, name='select-player-view'),
+    path('addToTeam/<int:pk>', views.add_to_team, name='add-to-team'),
 
 ]

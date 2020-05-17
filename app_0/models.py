@@ -106,6 +106,9 @@ class Team(models.Model):
     def __str__(self):
         return str(self.name)
 
+    class Meta:
+        default_related_name = 'teams'
+
     def save(self, **kwargs):
         if not self.is_active:
             self._deactivate_players()
@@ -125,7 +128,7 @@ class TeamPlayerMappings(models.Model):
     w_keeper = models.IntegerField(default=0)
     all_rounder = models.IntegerField(default=0)
     un_capped = models.IntegerField(default=0)
-    is_active = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
 
     class Meta:
         default_related_name = 'team_players'

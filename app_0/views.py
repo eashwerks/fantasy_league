@@ -3,7 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
-from app_0.models import IPLTeam, AuthUser, Player
+from admin_1.views import dash_board_view
+from app_0.models import IPLTeam, AuthUser, Player, TeamPlayerMappings
 
 
 @login_required
@@ -12,7 +13,7 @@ def index_view(request):
     context = {}
 
     if request.method == 'GET':
-        l_board = AuthUser.objects.order_by('allocated_points')
+        l_board = AuthUser.objects.order_by('-points')
         if not l_board.count() < 5:
             l_board = l_board[:5]
         context['l_board'] = l_board
@@ -25,8 +26,9 @@ def team_view(request):
     context = {}
     template_name = 'app_0/teams.html'
     if request.method == 'GET':
-        context['ipl_teams_1'] = queryset[:4]
-        context['ipl_teams_2'] = queryset[4:]
+        count = queryset.count() / 2
+        context['ipl_teams_1'] = queryset[:count]
+        context['ipl_teams_2'] = queryset[count:]
         return render(request, template_name, context)
 
 
@@ -36,7 +38,7 @@ def leader_board_view(request):
     context = {}
 
     if request.method == 'GET':
-        l_board = AuthUser.objects.order_by('allocated_points')
+        l_board = AuthUser.objects.order_by('-points')
         if not l_board.count() < 5:
             l_board = l_board[:5]
         context['l_board'] = l_board
@@ -52,15 +54,46 @@ def my_team_view(request):
         user = request.user
         if not user:
             raise Exception('Not logged in')
-        players = Player.objects.filter(team_players__team__created_by=user, team_players__is_active=True)
+        players = Player.objects.filter(team_players__team__created_by=user)
 
         context['players'] = players
         return render(request, template_name, context)
 
 
+def select_player_view(request, pk, err_message=None):
+    template_name = 'app_0/select_players.html'
+    players = Player.objects.filter(ipl_team=pk)
+    team = IPLTeam.objects.get(pk=pk)
+    my_players = request.user.teams.last().team_players.values_list('player', flat=True)
+    players = players.exclude(id__in=my_players)
+    context = {'error_message': err_message}
+    if request.method == 'GET':
+        count = players.count()
+        if count > 5:
+            context['players_1'] = players[:count]
+            context['players_2'] = players[count:]
+        else:
+            context['players_1'] = players
+            context['team'] = team
+        return render(request, template_name, context)
+
+
+def add_to_team(request, pk):
+    err_message = None
+    try:
+        player = Player.objects.get(pk=pk)
+        team = request.user.teams.last()
+        TeamPlayerMappings.objects.create(team=team, player=player)
+    except Exception as err:
+        err_message = err
+    return redirect(select_player_view, pk=player.ipl_team.id, err_message=err_message)
+
+
 def start(request):
     if not request.user.is_authenticated:
         return redirect(login_view)
+    if request.user.is_staff:
+        return redirect(dash_board_view)
     return redirect(index_view)
 
 

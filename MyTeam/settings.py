@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django_extensions',
 
     'app_0',
+    'admin_1',
 ]
 
 MIDDLEWARE = [
