@@ -25,6 +25,7 @@ class AuthUser(AbstractBaseUser, PermissionsMixin):
     dp = models.FileField(upload_to='profile_picture', null=True, blank=True)
 
     allocated_points = models.IntegerField(default=120)
+    points = models.IntegerField(default=0)
 
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email', 'first_name', 'phone_number']
@@ -103,7 +104,7 @@ class Team(models.Model):
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
     def save(self, **kwargs):
         if not self.is_active:
@@ -119,7 +120,12 @@ class Team(models.Model):
 class TeamPlayerMappings(models.Model):
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
     player = models.ForeignKey(Player, on_delete=models.CASCADE)
-    is_active = models.BooleanField(default=True)
+    batsmen = models.IntegerField(default=0)
+    bowler = models.IntegerField(default=0)
+    w_keeper = models.IntegerField(default=0)
+    all_rounder = models.IntegerField(default=0)
+    un_capped = models.IntegerField(default=0)
+    is_active = models.BooleanField(default=False)
 
     class Meta:
         default_related_name = 'team_players'
@@ -130,6 +136,9 @@ class TeamPlayerMappings(models.Model):
     @transaction.atomic
     def save(self, **kwargs):
         self._update_points()
+        self._update_count()
+        self._validate_max_rules(True)
+        self._activate_team()
         return super(TeamPlayerMappings, self).save(**kwargs)
 
     def _update_points(self):
@@ -143,3 +152,56 @@ class TeamPlayerMappings(models.Model):
         if not self.is_active:
             self.team.created_by.allocated_points = self.team.created_by.allocated_points + self.player.points
             self.team.created_by.save()
+
+    def _validate_max_rules(self, raise_exception=False):
+        error = []
+        if self.player.category in ['BATSMEN', 'BOWLERS']:
+            if not (self.batsmen <= 5):
+                error.append('No more capped {} can be added.'.format(self.player.category))
+        if self.player.category == 'WICKET_KEEPERS':
+            if not (self.w_keeper <= 2):
+                error.append('No more {} can be added.'.format(self.player.category))
+        if self.player.category == 'ALL_ROUNDERS':
+            if not (self.all_rounder <= 2):
+                error.append('No more capped {} can be added.'.format(self.player.category))
+        if error:
+            if raise_exception:
+                raise Exception(','.join(error))
+            return False
+        return True
+
+    def _activate_team(self):
+        is_validated = True
+        if not self.batsmen >= 3:
+            is_validated = False
+        if not self.bowler >= 3:
+            is_validated = False
+        if not self.w_keeper >= 1:
+            is_validated = False
+        if not self.all_rounder >= 1:
+            is_validated = False
+        if not self.un_capped >= 3:
+            is_validated = False
+        self.is_active = is_validated
+
+    def _update_count(self):
+        if self.player.category == 'BATSMEN':
+            if self.player.is_capped:
+                self.batsmen += 1
+            else:
+                self.un_capped += 1
+        if self.player.category == 'BOWLERS':
+            if self.player.is_capped:
+                self.bowler += 1
+            else:
+                self.un_capped += 1
+        if self.player.category == 'WICKET_KEEPERS':
+            self.w_keeper += 1
+            if not self.player.is_capped:
+                self.un_capped += 1
+
+        if self.player.category == 'ALL_ROUNDERS':
+            if self.player.is_capped:
+                self.bowler += 1
+            else:
+                self.un_capped += 1
