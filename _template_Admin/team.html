@@ -109,6 +109,10 @@
                     <input type="file" id="teamPhoto" class="form-control-file">
                 </div>
                 <div class="form-group">
+                  <label for="teamDescription">Team Description</label>
+                  <textarea name="" id="teamDescription" class="form-control" placeholder="Type Team Description"></textarea>
+              </div>
+                <div class="form-group">
                     <input type="submit" value="Save" class="btn btn-primary">
                 </div>
             </form>
@@ -124,6 +128,7 @@
                     <tr>
                       <th>No</th>                      
                       <th>Name</th>
+                      <th>Description</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -131,6 +136,7 @@
                     <tr>
                       <td>1</td>
                       <td>Chennai</td>
+                      <td>Helping Text</td>
                       <td>
                           <a class="btn btn-primary" data-toggle="modal" data-target="#editTeam"><i class="fa fa-pencil"></i></a>
                           <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
@@ -140,6 +146,7 @@
                     <tr>
                         <td>2</td>
                         <td>Chennai</td>
+                        <td>Helping Text</td>
                         <td>
                             <a class="btn btn-primary" data-toggle="modal" data-target="#editTeam"><i class="fa fa-pencil"></i></a>
                             <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
@@ -149,6 +156,7 @@
                     <tr>
                         <td>3</td>
                         <td>Chennai</td>
+                        <td>Helping Text</td>
                         <td>
                             <a class="btn btn-primary" data-toggle="modal" data-target="#editTeam"><i class="fa fa-pencil"></i></a>
                             <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
@@ -209,6 +217,8 @@
                         <input type="text" name="" id="editTeamname" placeholder="Team Name" class="form-control">
                         <label for="editTeamPhoto">Team Photo</label>
                         <input type="file" name="" id="editTeamPhoto" class="form-control-file">
+                        <label for="editTeamDescription">Team Description</label>
+                        <textarea name="" id="editTeamDescription" class="form-control" placeholder="Type Team Description"></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
