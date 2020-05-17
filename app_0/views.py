@@ -60,13 +60,13 @@ def my_team_view(request):
         return render(request, template_name, context)
 
 
-def select_player_view(request, pk, err_message=None):
+def select_player_view(request, pk):
     template_name = 'app_0/select_players.html'
     players = Player.objects.filter(ipl_team=pk)
     team = IPLTeam.objects.get(pk=pk)
     my_players = request.user.teams.last().team_players.values_list('player', flat=True)
     players = players.exclude(id__in=my_players)
-    context = {'error_message': err_message}
+    context = {}
     if request.method == 'GET':
         count = players.count()
         if count > 5:
@@ -80,13 +80,13 @@ def select_player_view(request, pk, err_message=None):
 
 def add_to_team(request, pk):
     err_message = None
+    player = Player.objects.get(pk=pk)
     try:
-        player = Player.objects.get(pk=pk)
         team = request.user.teams.last()
         TeamPlayerMappings.objects.create(team=team, player=player)
     except Exception as err:
         err_message = err
-    return redirect(select_player_view, pk=player.ipl_team.id, err_message=err_message)
+    return redirect(select_player_view, player.ipl_team.id)
 
 
 def start(request):

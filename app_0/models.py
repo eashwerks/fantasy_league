@@ -101,7 +101,12 @@ class Player(models.Model):
 class Team(models.Model):
     name = models.UUIDField(default=uuid.uuid4, editable=False)
     created_by = models.ForeignKey(AuthUser, on_delete=models.CASCADE)
-    is_active = models.BooleanField(default=True)
+    batsmen = models.IntegerField(default=0)
+    bowler = models.IntegerField(default=0)
+    w_keeper = models.IntegerField(default=0)
+    all_rounder = models.IntegerField(default=0)
+    un_capped = models.IntegerField(default=0)
+    is_active = models.BooleanField(default=False)
 
     def __str__(self):
         return str(self.name)
@@ -123,18 +128,13 @@ class Team(models.Model):
 class TeamPlayerMappings(models.Model):
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
     player = models.ForeignKey(Player, on_delete=models.CASCADE)
-    batsmen = models.IntegerField(default=0)
-    bowler = models.IntegerField(default=0)
-    w_keeper = models.IntegerField(default=0)
-    all_rounder = models.IntegerField(default=0)
-    un_capped = models.IntegerField(default=0)
     is_active = models.BooleanField(default=True)
 
     class Meta:
         default_related_name = 'team_players'
 
     def __str__(self):
-        return '{} of {}'.format(self.player.name, self.team.name)
+        return '{} of {}'.format(self.player.last_name, self.team.name)
 
     @transaction.atomic
     def save(self, **kwargs):
@@ -159,13 +159,13 @@ class TeamPlayerMappings(models.Model):
     def _validate_max_rules(self, raise_exception=False):
         error = []
         if self.player.category in ['BATSMEN', 'BOWLERS']:
-            if not (self.batsmen <= 5):
+            if not (self.team.batsmen <= 5):
                 error.append('No more capped {} can be added.'.format(self.player.category))
         if self.player.category == 'WICKET_KEEPERS':
-            if not (self.w_keeper <= 2):
+            if not (self.team.w_keeper <= 2):
                 error.append('No more {} can be added.'.format(self.player.category))
         if self.player.category == 'ALL_ROUNDERS':
-            if not (self.all_rounder <= 2):
+            if not (self.team.all_rounder <= 2):
                 error.append('No more capped {} can be added.'.format(self.player.category))
         if error:
             if raise_exception:
@@ -175,36 +175,36 @@ class TeamPlayerMappings(models.Model):
 
     def _activate_team(self):
         is_validated = True
-        if not self.batsmen >= 3:
+        if not self.team.batsmen >= 3:
             is_validated = False
-        if not self.bowler >= 3:
+        if not self.team.bowler >= 3:
             is_validated = False
-        if not self.w_keeper >= 1:
+        if not self.team.w_keeper >= 1:
             is_validated = False
-        if not self.all_rounder >= 1:
+        if not self.team.all_rounder >= 1:
             is_validated = False
-        if not self.un_capped >= 3:
+        if not self.team.un_capped >= 3:
             is_validated = False
-        self.is_active = is_validated
+        self.team.is_active = is_validated
 
     def _update_count(self):
         if self.player.category == 'BATSMEN':
             if self.player.is_capped:
-                self.batsmen += 1
+                self.team.batsmen += 1
             else:
-                self.un_capped += 1
+                self.team.un_capped += 1
         if self.player.category == 'BOWLERS':
             if self.player.is_capped:
-                self.bowler += 1
+                self.team.bowler += 1
             else:
-                self.un_capped += 1
+                self.team.un_capped += 1
         if self.player.category == 'WICKET_KEEPERS':
-            self.w_keeper += 1
+            self.team.w_keeper += 1
             if not self.player.is_capped:
-                self.un_capped += 1
+                self.team.un_capped += 1
 
         if self.player.category == 'ALL_ROUNDERS':
             if self.player.is_capped:
-                self.bowler += 1
+                self.team.bowler += 1
             else:
-                self.un_capped += 1
+                self.team.un_capped += 1
