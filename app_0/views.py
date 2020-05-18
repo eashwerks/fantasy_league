@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
+from admin_1.models import Match
 from admin_1.views import dash_board_view
 from app_0.models import IPLTeam, AuthUser, Player, TeamPlayerMappings
 
@@ -14,6 +15,11 @@ def index_view(request):
 
     if request.method == 'GET':
         l_board = AuthUser.objects.all()
+        matches = Match.objects.all()
+        if matches.count() < 3:
+            context['matches'] = matches
+        else:
+            context['matches'] = matches[:3]
         context['l_board'] = l_board
         return render(request, template_name, context)
 
@@ -50,7 +56,7 @@ def my_team_view(request):
         user = request.user
         if not user:
             raise Exception('Not logged in')
-        players = Player.objects.filter(team_players__team__created_by=user)
+        players = TeamPlayerMappings.objects.filter()
 
         context['players'] = players
         return render(request, template_name, context)

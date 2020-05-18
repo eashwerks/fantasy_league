@@ -115,9 +115,9 @@
                         <th class="head-item mbr-fonts-style display-7">
                             POINTS
                         </th>
-                        <th class="head-item mbr-fonts-style display-7">
-                            ACTION
-                        </th>
+<!--                        <th class="head-item mbr-fonts-style display-7">-->
+<!--                            ACTION-->
+<!--                        </th>-->
                     </tr>
                     </thead>
 
@@ -125,11 +125,10 @@
 
                     {% for item in players %}
                     <tr>
-                        <td class="body-item mbr-fonts-style display-7">{{ item.full_name }}</td>
-                        <td class="body-item mbr-fonts-style display-7">{{ item.ipl_team }}</td>
-                        <td class="body-item mbr-fonts-style display-7">{{ item.category }}</td>
+                        <td class="body-item mbr-fonts-style display-7">{{ item.player.full_name }}</td>
+                        <td class="body-item mbr-fonts-style display-7">{{ item.player.ipl_team }}</td>
+                        <td class="body-item mbr-fonts-style display-7">{{ item.player.category }}</td>
                         <td class="body-item mbr-fonts-style display-7">{{ item.points }}</td>
-                        <td class="body-item mbr-fonts-style display-7">Edit</td>
                     </tr>
                     {% endfor %}
 
