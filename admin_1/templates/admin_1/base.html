@@ -20,7 +20,7 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">Admin</a>
+    <a class="navbar-brand" href="{% url 'dash-board-view' %}">Admin</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
             data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -29,31 +29,31 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="{% url 'dash-board-view' %}">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">Dashboard</span>
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Teams">
-                <a class="nav-link" href="team.html">
+                <a class="nav-link" href="{% url 'admin-team-view' %}">
                     <i class="fa fa-fw fa-area-chart"></i>
-                    <span class="nav-link-text active-navlink">Teams</span>
+                    <span class="nav-link-text ">Teams</span>
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Players">
-                <a class="nav-link" href="add-player-team.html">
+                <a class="nav-link" href="{% url 'player-team-view' %}">
                     <i class="fa fa-fw fa-table"></i>
                     <span class="nav-link-text">Players</span>
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Matches">
-                <a class="nav-link" href="match.html">
+                <a class="nav-link" href="{% url 'admin-match-view' %}">
                     <i class="fa fa-fw fa-wrench"></i>
                     <span class="nav-link-text">Matches</span>
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Player Points">
-                <a class="nav-link" href="add-player-matches.html">
+                <a class="nav-link" href="{% url 'match-team' %}">
                     <i class="fa fa-fw fa-sitemap"></i>
                     <span class="nav-link-text">Player Points</span>
                 </a>

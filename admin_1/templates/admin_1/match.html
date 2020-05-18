@@ -1,226 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "admin_1/base.html" %}
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <title>Admin</title>
-  <!-- Bootstrap core CSS-->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom fonts for this template-->
-  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-  <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet">
-</head>
-
-<body class="fixed-nav sticky-footer bg-dark" id="page-top">
-  <!-- Navigation-->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">Admin</a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="index.html">
-            <i class="fa fa-fw fa-dashboard"></i>
-            <span class="nav-link-text">Dashboard</span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Teams">
-          <a class="nav-link" href="team.html">
-            <i class="fa fa-fw fa-area-chart"></i>
-            <span class="nav-link-text">Teams</span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Players">
-          <a class="nav-link" href="add-player-team.html">
-            <i class="fa fa-fw fa-table"></i>
-            <span class="nav-link-text">Players</span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Matches">
-          <a class="nav-link" href="match.html">
-            <i class="fa fa-fw fa-wrench"></i>
-            <span class="nav-link-text  active-navlink">Matches</span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Player Points">
-          <a class="nav-link" href="add-player-matches.html">
-            <i class="fa fa-fw fa-sitemap"></i>
-            <span class="nav-link-text">Player Points</span>
-          </a>
-        </li>
-        <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-wrench"></i>
-            <span class="nav-link-text">Components</span>
-          </a>
-          <ul class="sidenav-second-level collapse" id="collapseComponents">
-            <li>
-              <a href="navbar.html">Navbar</a>
-            </li>
-            <li>
-              <a href="cards.html">Cards</a>
-            </li>
-          </ul>
-        </li> -->
-      </ul>
-      <ul class="navbar-nav sidenav-toggler">
-        <li class="nav-item">
-          <a class="nav-link text-center" id="sidenavToggler">
-            <i class="fa fa-fw fa-angle-left"></i>
-          </a>
-        </li>
-      </ul>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <div class="content-wrapper">
-    <div class="container-fluid">
-      <!-- Breadcrumbs-->
-      <ol class="breadcrumb">
+{% block content %}
+<div class="container-fluid">
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.html">Dashboard</a>
+            <a href="index.html">Dashboard</a>
         </li>
         <li class="breadcrumb-item active">Matches</li>
-      </ol>
-      <div class="row">
-        <div class="col-12">         
-          <div class="jumbotron">
-            <h2 class="lead"><u>Add Match</u></h2>             
-            <form action="">
-                <div class="form-group">                    
-                    <label for="team1">Team 1</label>
-                    <select id="team1" class="form-control">
-                        <option selected disabled>- Select Team -</option>
-                        <option>chennai</option>
-                        <option>mumbai</option>
-                    </select>                   
-                </div>
-                <div class="form-group">                    
-                    <label for="team2">Team 2</label>
-                    <select id="team2" class="form-control">
-                        <option selected disabled>- Select Team -</option>
-                        <option>chennai</option>
-                        <option>mumbai</option>
-                    </select>                   
-                </div>
-                <div class="form-group">
-                    <label for="teamPhoto">Cover Photo</label>
-                    <input type="file" id="teamPhoto" class="form-control-file">
-                </div>
-                <div class="form-group">
-                    <label for="matchDate">Match Date</label>
-                    <input type="date" name="" id="matchDate" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="teamDescription">Match Description</label>
-                    <textarea name="" id="teamDescription" class="form-control" placeholder="Type Match Description"></textarea>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Save" class="btn btn-primary">
-                </div>
-            </form>
-          </div>
+    </ol>
+    <div class="row">
+        <div class="col-12">
+            <div class="jumbotron">
+                <h2 class="lead"><u>Add Match</u></h2>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="team1">Team 1</label>
+                        <select id="team1" name="team1" class="form-control">
+                            {% for item in teams%}
+                            <option value="{{ item.id }}">{{item.name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="team2">Team 2</label>
+                        <select id="team2" name="team2" class="form-control">
+                            {% for item in teams%}
+                            <option value="{{ item.id }}">{{item.name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="coverPhoto">Cover Photo</label>
+                        <input type="file" name="coverPhoto" id="coverPhoto" class="form-control-file">
+                    </div>
+                    <div class="form-group">
+                        <label for="matchDate">Match Date</label>
+                        <input type="date" name="matchDate" id="matchDate" class="form-control">
+                    </div>
+                    <lable class="text-danger">{{ error_message }}</lable>
+
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
         </div>
-      </div>
-      <div class="row">
-          <div class="col-12">
+    </div>
+    <div class="row">
+        <div class="col-12">
             <h3>Matches</h3>
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
+                    <thead>
                     <tr>
-                      <th>No</th>                      
-                      <th>Team 1</th>
-                      <th>Team 2</th>
-                      <th>Date</th>
-                      <th>Description</th>
-                      <th>Action</th>
+                        <th>No</th>
+                        <th>Team 1</th>
+                        <th>Team 2</th>
+                        <th>Date</th>
+                        <th>Action</th>
                     </tr>
-                  </thead>
-                  <tbody>
+                    </thead>
+                    <tbody>
+                    {% for item in matches %}
                     <tr>
-                      <td>1</td>
-                      <td>Chenai</td>
-                      <td>Mumbai</td>
-                      <td>20-05-2020</td>
-                      <td>Helping text</td>
-                      <td>
-                          <a class="btn btn-primary" data-toggle="modal" data-target="#editMatch"><i class="fa fa-pencil"></i></a>
-                          <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
-                          <a href="add-player-points.html" class="btn btn-success">Add Points</a>
-                      </td>                      
-                    </tr> 
-                    <tr>
-                        <td>2</td>
-                        <td>Chenai</td>
-                        <td>Mumbai</td>
-                        <td>21-05-2020</td>
-                        <td>Helping text</td>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{item.team_1.name}}</td>
+                        <td>{{item.team_2.name}}</td>
+                        <td>{{item.date}}</td>
                         <td>
-                            <a class="btn btn-primary" data-toggle="modal" data-target="#editMatch"><i class="fa fa-pencil"></i></a>
-                            <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
-                            <a href="add-player-points.html" class="btn btn-success">Add Points</a>
-                        </td> 
-                    </tr>                                     
-                  </tbody>
+                            <a class="btn btn-danger" href="{% url 'delete-match' item.id %}"><i class="fa fa-trash"></i></a>
+                            <a href="{% url 'points' item.id %}" class="btn btn-success">Add Points</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
                 </table>
-              </div>
-          </div>
-      </div>
-    </div>
-    <!-- /.container-fluid-->
-    <!-- /.content-wrapper-->
-    <footer class="sticky-footer">
-      <div class="container">
-        <div class="text-center">
-          <small>Copyright © Your Website 2020</small>
+            </div>
         </div>
-      </div>
-    </footer>
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fa fa-angle-up"></i>
-    </a>
-    <!-- Logout Modal-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+    </div>
+</div>
+{% endblock %}
+{% block modal %}
+<!-- Edit Team Modal-->
+<div class="modal fade" id="editMatch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Edit Team Modal-->
-    <div class="modal fade" id="editMatch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Edit Match</h5>
-              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">×</span>
-              </button>
+                <h5 class="modal-title" id="exampleModalLabel">Edit Match</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
             </div>
             <form action="">
                 <div class="modal-body">
@@ -230,42 +102,29 @@
                             <option selected disabled>- Select Team -</option>
                             <option>chennai</option>
                             <option>mumbai</option>
-                        </select>  
+                        </select>
                         <label for="team2">Team 2</label>
                         <select id="team2" class="form-control">
                             <option selected disabled>- Select Team -</option>
                             <option>chennai</option>
                             <option>mumbai</option>
-                        </select> 
+                        </select>
                         <label for="editTeamPhoto">Cover Photo</label>
-                        <input type="file" name="" id="editTeamPhoto" class="form-control-file">   
+                        <input type="file" name="" id="editTeamPhoto" class="form-control-file">
                         <label for="editMatchDate">Match Date</label>
                         <input type="date" name="" id="editMatchDate" class="form-control">
                         <label for="teamDescription">Match Description</label>
-                        <textarea name="" id="teamDescription" class="form-control" placeholder="Type Match Description"></textarea>                       
+                        <textarea name="" id="teamDescription" class="form-control"
+                                  placeholder="Type Match Description"></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>                  
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     <input type="submit" value="Save" class="btn btn-primary">
                 </div>
-            </form>            
-          </div>
+            </form>
         </div>
-      </div>
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <!-- Page level plugin JavaScript-->
-    <script src="vendor/datatables/jquery.dataTables.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin.min.js"></script>
-    <!-- Custom scripts for this page-->
-    <script src="js/sb-admin-datatables.min.js"></script>
-  </div>
-</body>
+    </div>
+</div>
+{% endblock %}
 
-</html>

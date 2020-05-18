@@ -20,4 +20,9 @@ urlpatterns = [
     path('deleteTeam/<int:pk>/', views.delete_team, name='delete-team'),
     path('playerTeams/', views.player_team_view, name='player-team-view'),
     path('players/<int:pk>/', views.admin_player_view, name='admin-player-view'),
+    path('matches/', views.admin_match_view, name='admin-match-view'),
+    path('deleteMatch/<int:pk>/', views.delete_match, name='delete-match'),
+    path('points/<int:pk>/', views.admin_player_points, name='points'),
+    path('matchTeam/', views.match_team_view, name='match-team'),
+
 ]

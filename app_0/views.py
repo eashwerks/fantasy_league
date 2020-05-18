@@ -13,9 +13,7 @@ def index_view(request):
     context = {}
 
     if request.method == 'GET':
-        l_board = AuthUser.objects.order_by('-points')
-        if not l_board.count() < 5:
-            l_board = l_board[:5]
+        l_board = AuthUser.objects.all()
         context['l_board'] = l_board
         return render(request, template_name, context)
 
@@ -38,9 +36,7 @@ def leader_board_view(request):
     context = {}
 
     if request.method == 'GET':
-        l_board = AuthUser.objects.order_by('-points')
-        if not l_board.count() < 5:
-            l_board = l_board[:5]
+        l_board = AuthUser.objects.all()
         context['l_board'] = l_board
         return render(request, template_name, context)
 

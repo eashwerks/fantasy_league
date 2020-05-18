@@ -58,10 +58,9 @@
                         <td>{{ item.name }}</td>
                         <td>{{ item.description }}</td>
                         <td>
-                            <a class="btn btn-primary" data-toggle="modal" data-target="#editTeam"><i
-                                    class="fa fa-pencil"></i></a>
+
                             <a class="btn btn-danger" href="{% url 'delete-team' item.id %}"><i class="fa fa-trash"></i></a>
-                            <a class="btn btn-success" href="add-player.html">Add Players</a>
+                            <a class="btn btn-success" href="{% url 'admin-player-view' item.id %}">Add Players</a>
                         </td>
                     </tr>
                     {% endfor %}

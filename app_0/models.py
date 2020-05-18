@@ -25,7 +25,6 @@ class AuthUser(AbstractBaseUser, PermissionsMixin):
     dp = models.FileField(upload_to='profile_picture', null=True, blank=True)
 
     allocated_points = models.IntegerField(default=120)
-    points = models.IntegerField(default=0)
 
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email', 'first_name', 'phone_number']
@@ -40,6 +39,13 @@ class AuthUser(AbstractBaseUser, PermissionsMixin):
         if self.last_name:
             return '{} {}'.format(self.first_name, self.last_name)
         return self.first_name
+
+    def points(self):
+        team = self.teams.last()
+        if team:
+            return sum(team.team_players.filter(is_active=True).values_list('points', flat=True))
+        else:
+            return 0
 
     @transaction.atomic
     def save(self, **kwargs):
@@ -106,6 +112,9 @@ class Team(models.Model):
     w_keeper = models.IntegerField(default=0)
     all_rounder = models.IntegerField(default=0)
     un_capped = models.IntegerField(default=0)
+    set_caption = models.BooleanField(default=False)
+    set_vise_caption = models.BooleanField(default=False)
+    set_power_player = models.BooleanField(default=False)
     is_active = models.BooleanField(default=False)
 
     def __str__(self):
@@ -128,6 +137,10 @@ class Team(models.Model):
 class TeamPlayerMappings(models.Model):
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
     player = models.ForeignKey(Player, on_delete=models.CASCADE)
+    is_caption = models.BooleanField(default=False)
+    is_vise_caption = models.BooleanField(default=False)
+    is_power_player = models.BooleanField(default=False)
+    points = models.IntegerField(default=0)
     is_active = models.BooleanField(default=True)
 
     class Meta:
@@ -138,8 +151,9 @@ class TeamPlayerMappings(models.Model):
 
     @transaction.atomic
     def save(self, **kwargs):
-        self._update_points()
-        self._update_count()
+        if not self.id:
+            self._update_points()
+            self._update_count()
         self._validate_max_rules(True)
         self._activate_team()
         return super(TeamPlayerMappings, self).save(**kwargs)
