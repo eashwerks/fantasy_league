@@ -5,17 +5,14 @@
 {% load static %}
 
 <section class="engine"><a href="https://mobirise.info/f">simple web creator</a></section>
+<h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2">Select Players from {{team.name}}</h2>
+<h3 class="mbr-section-subtitle display-5 align-center mbr-fonts-style mbr-light">Credits Left :
+    {{user.allocated_points}} / 120</h3>
+{% for main_item in player_cut %}
 <section class="features18 popup-btn-cards cid-rYNtkJP7IC" id="features18-x">
-
-
     <div class="container">
-        <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2">Select Players from {{team.name}}</h2>
-        <h3 class="mbr-section-subtitle display-5 align-center mbr-fonts-style mbr-light">Credits Left :
-            {{user.allocated_points}} / 120</h3>
-        <lable class="text-danger class=form-control px-3 display-7">{{ error_message }}</lable>
-
-        <div class="media-container-row pt-5 ">
-            {% for item in players_1 %}
+        <div class="media-container-row pt-3 ">
+            {% for item in main_item %}
             <div class="card p-3 col-12 col-md-6 col-lg-3 ">
                 <div class="card-wrapper ">
                     <div class="card-img">
@@ -36,33 +33,34 @@
         </div>
     </div>
 </section>
+{% endfor %}
 
-<section class="features18 popup-btn-cards cid-rYNwVQ6oDb" id="features18-y">
-
-
-    <div class="container">
+<!--<section class="features18 popup-btn-cards cid-rYNwVQ6oDb" id="features18-y">-->
 
 
-        <div class="media-container-row pt-5 ">
-            {% for item in players_2 %}
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper ">
-                    <div class="card-img">
-                        <div class="mbr-overlay"></div>
-                        <div class="mbr-section-btn text-center"><a href="#" class="btn btn-primary display-4">Add to
-                            Team</a></div>
-                        <img src="{{ item.dp.url }}" alt="dp" title="">
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title mbr-fonts-style display-7">
-                            {{ item.full_name }}</h4>
-                        <p class="mbr-text mbr-fonts-style align-left display-7">{{ item.category }}</p>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</section>
+<!--    <div class="container">-->
+
+
+<!--        <div class="media-container-row pt-5 ">-->
+<!--            {% for item in players_2 %}-->
+<!--            <div class="card p-3 col-12 col-md-6 col-lg-3">-->
+<!--                <div class="card-wrapper ">-->
+<!--                    <div class="card-img">-->
+<!--                        <div class="mbr-overlay"></div>-->
+<!--                        <div class="mbr-section-btn text-center"><a href="#" class="btn btn-primary display-4">Add to-->
+<!--                            Team</a></div>-->
+<!--                        <img src="{{ item.dp.url }}" alt="dp" title="">-->
+<!--                    </div>-->
+<!--                    <div class="card-box">-->
+<!--                        <h4 class="card-title mbr-fonts-style display-7">-->
+<!--                            {{ item.full_name }}</h4>-->
+<!--                        <p class="mbr-text mbr-fonts-style align-left display-7">{{ item.category }}</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            {% endfor %}-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 
 {% endblock %}

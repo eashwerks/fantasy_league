@@ -56,10 +56,33 @@ def my_team_view(request):
         user = request.user
         if not user:
             raise Exception('Not logged in')
-        players = TeamPlayerMappings.objects.filter()
+        players = TeamPlayerMappings.objects.filter(team__created_by=request.user)
+        power_player = players.filter(is_power_player=True).last()
+        captain = players.filter(is_caption=True).last()
+        vise_captain = players.filter(is_vise_caption=True).last()
 
         context['players'] = players
+        context['power_player'] = power_player
+        context['captain'] = captain
+        context['vise_captain'] = vise_captain
         return render(request, template_name, context)
+    if request.method == 'POST':
+        power_player = request.POST.get('powerPlayer', None)
+        captain = request.POST.get('captain', None)
+        vise_captain = request.POST.get('viseCaptain', None)
+        if power_player:
+            player = TeamPlayerMappings.objects.get(id=int(power_player))
+            player.is_power_player = True
+            player.save()
+        if captain:
+            player = TeamPlayerMappings.objects.get(id=int(captain))
+            player.is_caption = True
+            player.save()
+        if vise_captain:
+            player = TeamPlayerMappings.objects.get(id=int(vise_captain))
+            player.is_vise_caption = True
+            player.save()
+        return redirect(my_team_view)
 
 
 def select_player_view(request, pk):
@@ -71,12 +94,13 @@ def select_player_view(request, pk):
     context = {}
     if request.method == 'GET':
         count = players.count()
-        if count > 5:
-            context['players_1'] = players[:count]
-            context['players_2'] = players[count:]
-        else:
-            context['players_1'] = players
-            context['team'] = team
+        start_cut = 0
+        context['player_cut'] = []
+        for i in range(4, count, 4):
+            context['player_cut'].append(players[start_cut:i])
+            start_cut = i
+        context['player_cut'].append(players[start_cut:count])
+        context['team'] = team
         return render(request, template_name, context)
 
 

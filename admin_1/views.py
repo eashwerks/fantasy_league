@@ -91,11 +91,12 @@ def admin_player_view(request, pk):
         return render(request, template_name, context)
     if request.method == 'POST':
         name = request.POST.get('playerName', '')
+        _id = request.POST.get('playerId', None)
         image = request.FILES.get('playerPhoto', None)
         capped = request.POST.get('capped', 'off')
         un_capped = request.POST.get('uncapped', 'off')
         category = request.POST.get('playerSpecialisation', None)
-
+        is_capped = None
         if capped == 'on':
             is_capped = True
         elif un_capped == 'on':
@@ -104,9 +105,21 @@ def admin_player_view(request, pk):
         try:
             if name and image and category:
                 name = name.split()
-
-                Player.objects.create(first_name=name[0], last_name=' '.join(name[1:]), dp=image, is_capped=is_capped,
-                                      ipl_team=team)
+                if not _id:
+                    print(is_capped)
+                    Player.objects.create(first_name=name[0], last_name=' '.join(name[1:]), dp=image,
+                                          is_capped=is_capped,
+                                          ipl_team=team, category=category)
+                else:
+                    print(is_capped)
+                    p = Player.objects.get(pk=int(_id))
+                    p.first_name = name[0]
+                    p.last_name = ' '.join(name[1:])
+                    p.dp = image
+                    p.is_capped = is_capped
+                    p.ipl_team = team
+                    p.category = category
+                    p.save()
             else:
                 error_message = 'All fields are mandatory'
         except Exception as err:
@@ -197,3 +210,16 @@ def match_team_view(request):
     if request.method == 'GET':
         context['matches'] = matches
         return render(request, template_name, context)
+
+
+@admin_login_required
+def delete_player(request, pk):
+    team = None
+    try:
+        player = Player.objects.get(pk=pk)
+    except:
+        player = None
+    if player:
+        team = player.ipl_team
+        player.delete()
+    return redirect(admin_player_view, pk=team.id)

@@ -82,7 +82,7 @@ class Player(models.Model):
         default_related_name = 'players'
 
     def __str__(self):
-        return self.last_name
+        return self.first_name
 
     @property
     def full_name(self):
@@ -222,3 +222,4 @@ class TeamPlayerMappings(models.Model):
                 self.team.bowler += 1
             else:
                 self.team.un_capped += 1
+        self.team.save()

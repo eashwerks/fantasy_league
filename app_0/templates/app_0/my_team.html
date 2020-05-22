@@ -21,62 +21,124 @@
         <div class="media-container-row">
             <div class="mbr-testimonial p-3 align-center col-12 col-md-6 col-lg-4">
                 <div class="panel-item p-3">
+                    {% if power_player %}
                     <div class="card-block">
                         <div class="testimonial-photo">
-                            <img src="{% static 'assets/images/face1.jpg' %}">
+                            <img src="{{ power_player.player.dp.url }}">
                         </div>
                         <p class="mbr-text mbr-fonts-style display-7">Power player gives you more points</p>
                     </div>
                     <div class="card-footer">
                         <div class="mbr-author-name mbr-bold mbr-fonts-style display-7">
-                            John Smith
+                            {{ power_player.player.full_name }}
                         </div>
                         <small class="mbr-author-desc mbr-italic mbr-light mbr-fonts-style display-7">
                             Power Player</small>
                     </div>
+                    {% else %}
+                    <div class="card-block">
+                        <form method="post">
+                            {% csrf_token %}
+                            <select name="powerPlayer" id="powerPlayer" class="form-control">
+                                {% for item in players %}
+                                <option value="{{item.id}}">{{ item.player.full_name }}</option>
+                                {% endfor %}
+                            </select>
+                            <p class="mbr-text mbr-fonts-style display-7">Power player gives you more points</p>
+                            <div class="form-group">
+                                <input type="submit" value="Save" class="btn btn-primary">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <small class="mbr-author-desc mbr-italic mbr-light mbr-fonts-style display-7">
+                            Power Player</small>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
 
             <div class="mbr-testimonial p-3 align-center col-12 col-md-6 col-lg-4">
                 <div class="panel-item p-3">
+                    {% if captain %}
                     <div class="card-block">
                         <div class="testimonial-photo">
-                            <img src="{% static 'assets/images/face2.jpg' %}">
+                            <img src="{{ captain.player.dp.url }}">
                         </div>
-                        <p class="mbr-text mbr-fonts-style display-7">Captian gives you more points
-                        </p>
+                        <p class="mbr-text mbr-fonts-style display-7">Captain gives you more points</p>
                     </div>
                     <div class="card-footer">
                         <div class="mbr-author-name mbr-bold mbr-fonts-style display-7">
-                            John Smith
+                            {{ captain.player.full_name }}
                         </div>
                         <small class="mbr-author-desc mbr-italic mbr-light mbr-fonts-style display-7">
-                            Captian</small>
+                            Captain</small>
                     </div>
+                    {% else %}
+                    <div class="card-block">
+                        <form method="post">
+                            {% csrf_token %}
+                            <select name="captain" id="captain" class="form-control">
+                                {% for item in players %}
+                                <option value="{{item.id}}">{{ item.player.full_name }}</option>
+                                {% endfor %}
+                            </select>
+                            <p class="mbr-text mbr-fonts-style display-7">Captain gives you more points</p>
+                            <div class="form-group">
+                                <input type="submit" value="Save" class="btn btn-primary">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <small class="mbr-author-desc mbr-italic mbr-light mbr-fonts-style display-7">
+                            Captain</small>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
 
             <div class="mbr-testimonial p-3 align-center col-12 col-md-6 col-lg-4">
                 <div class="panel-item p-3">
+                    {% if vise_captain %}
                     <div class="card-block">
                         <div class="testimonial-photo">
-                            <img src="{% static 'assets/images/face3.jpg' %}">
+                            <img src="{{ vise_captain.player.dp.url }}">
                         </div>
-                        <p class="mbr-text mbr-fonts-style display-7">Vice Captian player gives you more points
-                        </p>
+                        <p class="mbr-text mbr-fonts-style display-7">Vice Captain gives you more points</p>
                     </div>
                     <div class="card-footer">
                         <div class="mbr-author-name mbr-bold mbr-fonts-style display-7">
-                            John Smith
+                            {{ vise_captain.player.full_name }}
                         </div>
                         <small class="mbr-author-desc mbr-italic mbr-light mbr-fonts-style display-7">
                             Vice Captain</small>
                     </div>
+                    {% else %}
+                    <div class="card-block">
+                        <form method="post">
+                            {% csrf_token %}
+                            <select name="viseCaptain" id="viseCaptain" class="form-control">
+                                {% for item in players %}
+                                <option value="{{item.id}}">{{ item.player.full_name }}</option>
+                                {% endfor %}
+                            </select>
+                            <p class="mbr-text mbr-fonts-style display-7">Vice Captain gives you more points</p>
+                            <div class="form-group">
+                                <input type="submit" value="Save" class="btn btn-primary">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <small class="mbr-author-desc mbr-italic mbr-light mbr-fonts-style display-7">
+                            Vise Captain</small>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
-
-
         </div>
+
+
+    </div>
     </div>
 </section>
 
@@ -115,9 +177,9 @@
                         <th class="head-item mbr-fonts-style display-7">
                             POINTS
                         </th>
-<!--                        <th class="head-item mbr-fonts-style display-7">-->
-<!--                            ACTION-->
-<!--                        </th>-->
+                        <!--                        <th class="head-item mbr-fonts-style display-7">-->
+                        <!--                            ACTION-->
+                        <!--                        </th>-->
                     </tr>
                     </thead>
 
